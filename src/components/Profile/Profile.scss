@@ -1,0 +1,15 @@
+.main {
+    grid-area: main;
+    background-color: black;
+}
+
+.main__image-container-01 {
+    height: 170px;
+    overflow: hidden;
+    position: relative;
+}
+.main__image-01 {
+    width: 100%;
+    position: absolute;
+    top: -230px;
+}

@@ -15,6 +15,9 @@ body {
   background-color: silver;
   color: silver;
 }
+h2 {
+  padding: 20px;
+}
 .App {
   text-align: center;
 }

@@ -3,8 +3,9 @@ import './App.css';
 // import { render } from '@testing-library/react';
 import {
   BrowserRouter,
-  Route,
+  Route, NavLink
 } from "react-router-dom";
+
 
 import Header from './components/Header/Header'
 import Nav from './components/Nav/Nav'
@@ -15,6 +16,7 @@ import Artworks from './components/Artworks/Artworks'
 import ArtSchool from './components/ArtSchool/ArtSchool'
 import Contacts from './components/Contacts/Contacts'
 import SunProject from './components/SunProject/SunProject'
+import Dialogs from './components/Dialogs/Dialogs'
 
 
 const App = () => {
@@ -31,6 +33,7 @@ const App = () => {
           <Route path="/artschool" component={ArtSchool} />
           <Route path="/sunproject" component={SunProject} />
           <Route path="/contacts" component={Contacts} />
+          <Route path="/dialogs" component={Dialogs} />
 
         </div>
         <Footer />

@@ -1,3 +1,15 @@
 .posts {
     color: ivory;
 }
+
+.posts__new {
+    padding: 10px;
+}
+.posts__input,
+.input__button {
+    margin: 10px;
+    padding: 10px;
+}
+.input__button {
+    padding: 5px 10px;
+}

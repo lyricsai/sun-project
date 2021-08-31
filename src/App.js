@@ -3,7 +3,7 @@ import './App.css';
 // import { render } from '@testing-library/react';
 import {
   BrowserRouter,
-  Route, NavLink
+  Route,
 } from "react-router-dom";
 
 

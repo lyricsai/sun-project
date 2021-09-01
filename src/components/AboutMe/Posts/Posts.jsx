@@ -1,6 +1,6 @@
 import './Posts.scss';
 import Post from './Post/Post'
-
+import NewPost from './NewPost/NewPost';
 
 let postsData = [
     { id: 1, message: "Last one", likesCounter: 2 },
@@ -8,21 +8,15 @@ let postsData = [
     { id: 3, message: "Long Ago", likesCounter: 11 },
 ]
 
+let postsElements = postsData.map(post => <Post message={post.message} likesCounter={post.likesCounter} />)
+
 const Posts = () => {
     return (
         <section className="main__posts posts">
             <h2>My Posts</h2>
-            <div className="posts__new">
-                <h4>New Post</h4>
-                <input autocomplete="off" type="textarea" name="form[]" className="posts__input" placeholder="Type something..." />
-                <input type="button" value="Post It" className='input__button' />
-
-            </div>
+            <NewPost />
             <div className="posts__history">
-                <Post message={postsData[0].message} likesCounter={postsData[0].likesCounter} />
-                <Post message={postsData[1].message} likesCounter={postsData[1].likesCounter} />
-                <Post message={postsData[2].message} likesCounter={postsData[2].likesCounter} />
-
+                {postsElements}
             </div>
         </section>
     )

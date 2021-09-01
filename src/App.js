@@ -27,13 +27,14 @@ const App = () => {
         <Nav />
         <div className="app__wrapper_content">
 
-          <Route path="/aboutme" component={AboutMe} />
+
           <Route path="/news" component={News} />
           <Route path="/artworks" component={Artworks} />
           <Route path="/artschool" component={ArtSchool} />
           <Route path="/sunproject" component={SunProject} />
           <Route path="/contacts" component={Contacts} />
-          <Route path="/dialogs" component={Dialogs} />
+          <Route path="/dialogs" render={(() => <Dialogs />)} />
+          <Route path="/aboutme" render={(() => <AboutMe />)} />
 
         </div>
         <Footer />

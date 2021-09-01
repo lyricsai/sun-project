@@ -1,4 +1,3 @@
-
 import styles from './Dialogs.module.scss'
 import DialogMessage from './DialogMessage/DialogMessage'
 import DialogItem from './DialogItem/DialogItem'
@@ -15,8 +14,6 @@ const Dialogs = () => {
         { id: 6, name: "Oreshechko" },
     ]
 
-    let dialogsElements = dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id} />)
-
     let messagesData = [
         { id: 1, message: "Hey, your new artwork is awesome!!!" },
         { id: 2, message: "Is it available for a sale?" },
@@ -25,6 +22,7 @@ const Dialogs = () => {
         { id: 5, message: "What about delivery?" },
     ]
 
+    let dialogsElements = dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id} />)
     let messagesElements = messagesData.map(message => <DialogMessage message={message.message} id={message.id} />)
 
     return (

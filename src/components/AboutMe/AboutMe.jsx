@@ -5,7 +5,6 @@ import InfoUser from './InfoUser/InfoUser';
 import './AboutMe.scss';
 
 
-
 const AboutMe = () => {
     return (
         <main className="main">

@@ -19,7 +19,8 @@ import SunProject from './components/SunProject/SunProject'
 import Dialogs from './components/Dialogs/Dialogs'
 
 
-const App = () => {
+
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className="app__wrapper">
@@ -27,14 +28,14 @@ const App = () => {
         <Nav />
         <div className="app__wrapper_content">
 
-
+          <Route path="/aboutme" render={(() => <AboutMe postsData={props.postsData} />)} />
           <Route path="/news" component={News} />
           <Route path="/artworks" component={Artworks} />
           <Route path="/artschool" component={ArtSchool} />
           <Route path="/sunproject" component={SunProject} />
           <Route path="/contacts" component={Contacts} />
-          <Route path="/dialogs" render={(() => <Dialogs />)} />
-          <Route path="/aboutme" render={(() => <AboutMe />)} />
+          <Route path="/dialogs" render={(() => <Dialogs messagesData={props.messagesData} dialogsData={props.dialogsData} />)} />
+
 
         </div>
         <Footer />

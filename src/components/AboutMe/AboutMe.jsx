@@ -5,12 +5,12 @@ import InfoUser from './InfoUser/InfoUser';
 import './AboutMe.scss';
 
 
-const AboutMe = () => {
+const AboutMe = (props) => {
     return (
         <main className="main">
             <MainPicture />
             <InfoUser />
-            <Posts />
+            <Posts postsData={props.postsData} />
         </main>
 
     )

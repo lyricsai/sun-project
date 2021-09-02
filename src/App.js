@@ -1,10 +1,5 @@
-// import logo from './logo.svg';
 import './App.css';
-// import { render } from '@testing-library/react';
-import {
-  BrowserRouter,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Route, } from "react-router-dom";
 
 
 import Header from './components/Header/Header'
@@ -17,6 +12,7 @@ import ArtSchool from './components/ArtSchool/ArtSchool'
 import Contacts from './components/Contacts/Contacts'
 import SunProject from './components/SunProject/SunProject'
 import Dialogs from './components/Dialogs/Dialogs'
+import RootPicture from './components/RootPicture/RootPicture';
 
 
 
@@ -28,6 +24,7 @@ const App = (props) => {
         <Nav />
         <div className="app__wrapper_content">
 
+          <Route exact path="/" component={RootPicture} />
           <Route path="/aboutme" render={(() => <AboutMe postsData={props.postsData} />)} />
           <Route path="/news" component={News} />
           <Route path="/artworks" component={Artworks} />
@@ -35,8 +32,6 @@ const App = (props) => {
           <Route path="/sunproject" component={SunProject} />
           <Route path="/contacts" component={Contacts} />
           <Route path="/dialogs" render={(() => <Dialogs messagesData={props.messagesData} dialogsData={props.dialogsData} />)} />
-
-
         </div>
         <Footer />
       </div>

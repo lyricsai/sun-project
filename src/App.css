@@ -56,4 +56,6 @@ h2 {
   grid-area: main;
   background-color: black;
   color: silver;
+  border-radius: 2em;
+  overflow: hidden;
 }

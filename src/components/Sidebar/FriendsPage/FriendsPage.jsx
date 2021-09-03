@@ -1,5 +1,7 @@
+import { NavLink } from 'react-router-dom';
 import './FriendsPage.scss'
 import FriendItem from './FriendItem/FriendItem'
+
 
 const FriendsPage = (props) => {
 
@@ -7,7 +9,7 @@ const FriendsPage = (props) => {
 
     return (
         <div className="friendsPage">
-            {/* <NavLink to="/friends" className='friendsLink'>Friends</NavLink> */}
+            <NavLink to="/friends" className='friendsLink'>Friends</NavLink>
             {/* <img src={props.state.friendsData.avatar} alt="avatar" /> */}
             {friendsElements}
         </div>

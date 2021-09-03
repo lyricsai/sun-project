@@ -1,5 +1,9 @@
 .posts {
     color: ivory;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
 }
 
 .posts__new {
@@ -12,4 +16,10 @@
 }
 .input__button {
     padding: 5px 10px;
+}
+.posts__history {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    width: 75%;
 }

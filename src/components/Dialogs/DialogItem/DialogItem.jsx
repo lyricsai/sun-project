@@ -5,8 +5,10 @@ const DialogItem = (props) => {
     let path = '/dialogs/' + props.id
     return (
         < div className='dialogs__item' >
-
-            <NavLink to={path} className={styles.dialogs__dialog + " " + styles.active}>{props.name}</NavLink>
+            <NavLink to={path} className={styles.dialogs__dialog + " " + styles.active}>
+                <div className='avatarDialogsContainer' ><img src={props.avatar} alt="avatar" className="avatarDialogs" /></div>
+                {props.name}
+            </NavLink>
         </ div>
     )
 }

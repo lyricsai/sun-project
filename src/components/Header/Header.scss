@@ -2,7 +2,8 @@
     grid-area: header;
     display: flex;
     align-items: center;
-    background-color: black;
+    box-shadow: 1px 10px 10px rgba(150, 150, 150, 0.2);
+    border-radius: 2rem;
 }
 .header__logo {
     color: ivory;

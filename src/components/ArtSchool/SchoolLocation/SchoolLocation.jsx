@@ -11,10 +11,14 @@ const SchoolLocation = () => {
                     width="400"
                     height="300"
                     allowfullscreen=""
-                    loading="lazy" >
+                    loading="lazy"
+                    title="location"
+                    style={{
+                        border: 0
+                    }}>
                 </iframe>
             </div>
-        </div>
+        </div >
     )
 
 

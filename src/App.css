@@ -12,13 +12,12 @@ li {
   color: ivory;
 }
 body {
-  background-color: silver;
-  color: silver;
+  color: gray;
 }
 h2 {
   padding: 20px;
 }
-
+/* 
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,7 +27,7 @@ h2 {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 /* @keyframes App-logo-spin {
   from {
@@ -54,8 +53,8 @@ h2 {
 }
 .app__wrapper_content {
   grid-area: main;
-  background-color: black;
-  color: silver;
+  box-shadow: 1px 10px 10px rgba(150, 150, 150, 0.2);
+  color: black;
   border-radius: 2em;
   overflow: hidden;
 }

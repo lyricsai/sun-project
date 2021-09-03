@@ -9,7 +9,8 @@ const FriendsPage = (props) => {
 
     return (
         <div className="friendsPage">
-            <NavLink to="/friends" className='friendsLink'>Friends</NavLink>
+            <h3 className='friendsPageTitle' >Friends</h3>
+            <NavLink to="/friends" className='friendsLink'></NavLink>
             {/* <img src={props.state.friendsData.avatar} alt="avatar" /> */}
             {friendsElements}
         </div>

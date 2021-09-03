@@ -1,12 +1,16 @@
 .nav {
-    background-color: black;
+    box-shadow: 1px 10px 10px rgba(150, 150, 150, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 1rem;
+    padding: 10px 0 10px 0;
+    font-size: 18px;
+    font-weight: 600;
 }
 .nav__item {
     display: block;
     color: silver;
-    margin: 20px 0 0 0;
-    padding: 20px 0px 0px 0px;
+    margin: 10px 10px 0 10px;
+    padding: 10px 0px 10px 0px;
 }

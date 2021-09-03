@@ -1,12 +1,13 @@
-import './Posts.scss';
+import './MyPosts.scss';
 import Post from './Post/Post'
 import NewPost from './NewPost/NewPost';
 
 
 
-const Posts = (props) => {
+const MyPosts = (props) => {
 
-    let postsElements = props.postsData.map(post => <Post message={post.message} likesCounter={post.likesCounter} />)
+
+    let postsElements = props.state.postsData.map(post => <Post message={post.message} likesCounter={post.likesCounter} />)
 
     return (
         <section className="main__posts posts">
@@ -19,4 +20,4 @@ const Posts = (props) => {
     )
 }
 
-export default Posts
+export default MyPosts

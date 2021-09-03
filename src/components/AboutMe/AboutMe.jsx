@@ -1,5 +1,4 @@
 import MainPicture from './MainPicture/MainPicture';
-import Posts from './Posts/Posts';
 import InfoUser from './InfoUser/InfoUser';
 
 
@@ -11,7 +10,6 @@ const AboutMe = (props) => {
         <main className="main">
             <MainPicture />
             <InfoUser />
-            <Posts postsData={props.postsData} />
         </main>
 
     )

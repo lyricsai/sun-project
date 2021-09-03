@@ -21,10 +21,7 @@ const App = (props) => {
     <BrowserRouter>
       <div className="app__wrapper">
         <Header />
-
-        <Sidebar />
-
-
+        <Sidebar state={props.state.sidebar} />
         <div className="app__wrapper_content">
           <Route exact path="/" component={RootPicture} />
           <Route path="/aboutme" render={(() => <AboutMe />)} />

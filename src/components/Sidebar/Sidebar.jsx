@@ -1,3 +1,4 @@
+import FriendsPage from './FriendsPage/FriendsPage'
 import Nav from './Nav/Nav'
 import './Sidebar.scss'
 
@@ -6,9 +7,7 @@ const Sidebar = (props) => {
 
         <aside className='sidebar'>
             <Nav />
-            <div className="sidebar__friends">
-                Avatar+friends.name
-            </div>
+            <FriendsPage state={props.state} />
         </aside>
     )
 }

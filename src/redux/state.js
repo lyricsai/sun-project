@@ -25,7 +25,12 @@ let state = {
         ],
     },
     sidebar: {
-        friendsData: [],
+        friendsData: [
+            { avatar: 'https://www.teahub.io/photos/full/76-768446_nice-pic-hd-download.jpg', id: 2, name: "Jannet", },
+            { avatar: '', id: 3, name: "Inna" },
+            { avatar: '', id: 4, name: "Valentina" },
+            { avatar: '', id: 5, name: "Olga" },
+            { avatar: '', id: 6, name: "Oreshechko" },],
     },
 
 }

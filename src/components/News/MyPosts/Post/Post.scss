@@ -1,7 +1,16 @@
+.post__container {
+    position: relative;
+}
 .post__button {
     display: inline-block;
-    margin: 10px 10px 0px 100px;
     padding: 5px 20px;
+    border-radius: 2rem;
+    color: rgb(56, 56, 56);
+    background-color: silver;
+    border-style: none;
+    &:hover {
+        background-color: rgb(156, 156, 156);
+    }
 }
 .post__avatar {
     display: inline-block;
@@ -9,4 +18,32 @@
     width: 50px;
     height: 50px;
     margin: 20px 10px;
+}
+.post__body {
+    color: silver;
+    width: 100%;
+    box-shadow: 1px 10px 10px rgba(150, 150, 150, 0.2), inset 2px 20px 20px rgba(200, 200, 200, 0.1);
+    border-radius: 2rem;
+    text-align: justify;
+}
+.post__entire {
+    display: flex;
+    margin: 40px;
+    &:hover {
+        transform: scale(110%);
+    }
+}
+.post__itself {
+    margin: 20px;
+}
+
+.post__likes {
+    position: absolute;
+    right: 50px;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: silver;
+    width: 20%;
 }

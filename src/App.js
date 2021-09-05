@@ -26,7 +26,7 @@ const App = (props) => {
           <Route exact path="/" component={RootPicture} />
           <Route path="/aboutme" render={(() => <AboutMe />)} />
           <Route path="/news" render={(() => <News state={props.state.newsPage} />)} />
-          <Route path="/artworks" component={Artworks} />
+          <Route path="/artworks" render={(() => <Artworks state={props.state.artworks} />)} />
           <Route path="/artschool" component={ArtSchool} />
           <Route path="/sunproject" component={SunProject} />
           <Route path="/contacts" component={Contacts} />

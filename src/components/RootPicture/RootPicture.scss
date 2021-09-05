@@ -1,6 +1,12 @@
 .appFrontContainer__image {
     width: 100%;
+    // position: relative;
 }
-.appFront__image {
-    width: 100%;
+.appFrontContainer__image img {
+    width: 200%;
+    object-fit: cover;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // width: 110%;
 }

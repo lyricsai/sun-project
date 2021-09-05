@@ -31,7 +31,21 @@ let state = {
             { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP60_0QRknzoqSRgcBm7kYCv1xdOOrkZxDYQ&usqp=CAU', id: 5, name: "Olga" },
             { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4vQ01SZk7zVEqk-ZSdsBuou75rB1Xao3QQg&usqp=CAU', id: 6, name: "Oreshechko" },],
     },
+    artworks: [
+        { id: 1, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka1_29x41.jpg', },
+        { id: 2, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka2_40x28.jpg', },
+        { id: 3, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka3_14x14.jpg', },
+        { id: 4, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka4_14x14.jpg', },
+        { id: 5, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka5_24x24.jpg', },
+        { id: 6, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka6_24x29.jpg', },
+        { id: 7, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka7_21x32.jpg', },
+        { id: 8, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka8_23x29.jpg', },
+        { id: 9, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka9_19x28.jpg', },
+        { id: 10, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka10_28x40.jpg', },
 
+
+
+    ]
 }
 
 export default state

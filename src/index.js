@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import state from './redux/state'
+import $ from 'jquery'
+
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,7 +22,7 @@ ReactDOM.render(
 reportWebVitals();
 
 
-
+$.ajax('https://repetitora.net/api/JS/Images')
 //DATA
 
 

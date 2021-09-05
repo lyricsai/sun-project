@@ -6,19 +6,24 @@
 .newPost__input,
 .newPost__button {
     margin: 10px;
-    padding: 10px;
+    border-radius: 2rem;
 }
 .newPost__button {
     padding: 5px 15px;
-    background-color: silver;
+    background-color: darksilver;
     border: none;
-    border-radius: 2rem;
+
+    box-shadow: 1px 10px 10px rgba(150, 150, 150, 0.2), -2px -2px 10px rgba(150, 150, 150, 0.2);
+    transition: all 0.3s ease 0s;
     &:hover {
         background-color: rgb(156, 156, 156);
     }
 }
 
 .newPost__input {
+    box-shadow: inset 1px 2px 10px rgba(150, 150, 150, 0.2), inset -2px -2px 10px rgba(150, 150, 150, 0.2);
+    color: #808080;
+    padding: 20px;
     &:focus {
         // width: 60%;
     }

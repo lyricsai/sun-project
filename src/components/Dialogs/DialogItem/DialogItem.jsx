@@ -7,8 +7,12 @@ const DialogItem = (props) => {
     return (
         < div className='dialogs__item' >
             <NavLink to={path} className={styles.dialogs__dialog + " " + styles.active}>
-                <div className={styles.avatarDialogsContainer} ><img src={props.avatar} alt="avatar" className={styles.avatarDialogs} /></div>
-                {props.name}
+                <div className={styles.avatarDialogsContainer} >
+                    <img src={props.avatar} alt="avatar" className={styles.avatarDialogs} />
+                </div>
+                <div className={styles.dialog__name} >
+                    {props.name}
+                </div>
             </NavLink>
         </ div>
     )

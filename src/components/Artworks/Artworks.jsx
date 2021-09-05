@@ -5,7 +5,7 @@ const Artworks = (props) => {
     return (
 
         <section className="myArtworks">
-            <h2>My Art Gallery</h2>
+            <h2 className='myArtworksTitle' >My Art Gallery</h2>
 
             <GallerySlider state={props.state} />
 

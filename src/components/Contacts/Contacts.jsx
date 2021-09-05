@@ -7,6 +7,7 @@ const Contacts = () => {
 
         <section>
             <h2>Contacts</h2>
+            <h3>You can find me here</h3>
             <Instagram />
         </section>
 

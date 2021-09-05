@@ -2,10 +2,11 @@ import './Slide.scss'
 
 const Slide = (props) => {
 
+  // let source = props.artwork.maps(artwork => artwork.artwork)
 
   return (
-    <div>
-      <img src={props.artwork} alt="artwork" />
+    <div className='slideContainer'>
+      <img className='slideContainerImage' src={props.artwork} alt={props.id} />
     </div>
   )
 

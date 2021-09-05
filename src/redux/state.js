@@ -1,3 +1,16 @@
+import art1 from './../images/artworks/Litvinenka1_29x41.jpg';
+import art2 from './../images/artworks/Litvinenka2_40x28.jpg';
+import art3 from './../images/artworks/Litvinenka3_14x14.jpg';
+import art4 from './../images/artworks/Litvinenka4_14x14.jpg';
+import art5 from './../images/artworks/Litvinenka5_24x24.jpg';
+import art6 from './../images/artworks/Litvinenka6_24x29.jpg';
+import art7 from './../images/artworks/Litvinenka7_21x32.jpg';
+import art8 from './../images/artworks/Litvinenka8_23x29.jpg';
+import art9 from './../images/artworks/Litvinenka9_19x28.jpg';
+import art10 from './../images/artworks/Litvinenka10_28x40.jpg';
+import art11 from './../images/artworks/Litvinenka11_22x23.jpg';
+
+
 
 let state = {
     dialogsPage: {
@@ -18,9 +31,9 @@ let state = {
     },
     newsPage: {
         postsData: [
-            { id: 1, message: "Last one", likesCounter: 2 },
+            { id: 1, message: "Long Ago", likesCounter: 11 },
             { id: 2, message: "Before", likesCounter: 3 },
-            { id: 3, message: "Long Ago", likesCounter: 11 },
+            { id: 3, message: "Last one", likesCounter: 2 },
         ],
     },
     sidebar: {
@@ -32,20 +45,31 @@ let state = {
             { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4vQ01SZk7zVEqk-ZSdsBuou75rB1Xao3QQg&usqp=CAU', id: 6, name: "Oreshechko" },],
     },
     artworks: [
-        { id: 1, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka1_29x41.jpg', },
-        { id: 2, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka2_40x28.jpg', },
-        { id: 3, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka3_14x14.jpg', },
-        { id: 4, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka4_14x14.jpg', },
-        { id: 5, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka5_24x24.jpg', },
-        { id: 6, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka6_24x29.jpg', },
-        { id: 7, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka7_21x32.jpg', },
-        { id: 8, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka8_23x29.jpg', },
-        { id: 9, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka9_19x28.jpg', },
-        { id: 10, artwork: 'https://github.com/lyricsai/react-learning/blob/main/src/images/artworks/Litvinenka10_28x40.jpg', },
-
-
-
+        { id: 1, artwork: art1, },
+        { id: 2, artwork: art2, },
+        { id: 3, artwork: art3, },
+        { id: 4, artwork: art4, },
+        { id: 5, artwork: art5, },
+        { id: 6, artwork: art6, },
+        { id: 7, artwork: art7, },
+        { id: 8, artwork: art8, },
+        { id: 9, artwork: art9, },
+        { id: 10, artwork: art10, },
+        { id: 10, artwork: art11, },
     ]
 }
+
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        likesCounter: 0,
+    }
+
+
+    state.newsPage.postsData.push(newPost)
+}
+
 
 export default state

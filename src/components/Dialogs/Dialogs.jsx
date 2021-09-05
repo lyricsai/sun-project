@@ -1,7 +1,7 @@
 import styles from './Dialogs.module.scss'
 import DialogMessage from './DialogMessage/DialogMessage'
 import DialogItem from './DialogItem/DialogItem'
-
+import NewMessage from './NewMessage/NewMessage'
 
 const Dialogs = (props) => {
 
@@ -12,11 +12,12 @@ const Dialogs = (props) => {
         <section className={styles.dialogs}>
             <h2 className={styles.dialogs__title}>Dialogs</h2>
             <div className={styles.dialogs__display}>
-                <div className='dialogs__items'>
+                <div className={styles.dialogs__items}>
                     {dialogsElements}
                 </div>
                 <div className={styles.dialog__messages}>
                     {messagesElements}
+                    <NewMessage />
                 </div>
             </div>
         </section>

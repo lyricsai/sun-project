@@ -1,7 +1,11 @@
 import './Post.scss'
 import me from './../../../../images/me.jpg'
+import React from 'react'
 
 const Post = (props) => {
+
+
+
     return (
         <div className="post__container">
             <div className="post__entire">
@@ -13,7 +17,7 @@ const Post = (props) => {
             </div>
 
             <div className="post__likes">
-                <button className="post__button">like</button>
+                <button type='button' className="post__button">like</button>
                 {props.likesCounter}
             </div>
 

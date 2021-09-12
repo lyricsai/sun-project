@@ -1,14 +1,19 @@
 import './NewPost.scss'
 import React from 'react'
 
-const NewPost = () => {
+const NewPost = (props) => {
+
+
 
     let newPostElement = React.createRef()
 
     let addPost = () => {
         let text = newPostElement.current.value
-        alert(text)
+        props.addPost(text)
     }
+
+
+    debugger
 
 
     return (

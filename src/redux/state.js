@@ -10,6 +10,8 @@ import art9 from './../images/artworks/Litvinenka9_19x28.jpg';
 import art10 from './../images/artworks/Litvinenka10_28x40.jpg';
 import art11 from './../images/artworks/Litvinenka11_22x23.jpg';
 
+import { rerenderEntireTree } from './../render'
+
 
 
 let state = {
@@ -61,14 +63,18 @@ let state = {
 
 
 export let addPost = (postMessage) => {
+
+    debugger
+
+
     let newPost = {
         id: 5,
         message: postMessage,
         likesCounter: 0,
     }
 
-
     state.newsPage.postsData.push(newPost)
+    rerenderEntireTree()
 }
 
 

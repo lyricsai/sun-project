@@ -1,20 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { rerenderEntireTree } from './render'
 import './index.css';
-import App from './App';
+
 import reportWebVitals from './reportWebVitals';
-import state from './redux/state'
-import { addPost } from './redux/state'
-import $ from 'jquery'
 
-// addPost('lololohhhhhhhhhhhhhhhhhhhhhhhhh')
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App state={state} addPost={addPost} />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+
+
+rerenderEntireTree()
 
 
 // If you want to start measuring performance in your app, pass a function
@@ -23,7 +15,7 @@ ReactDOM.render(
 reportWebVitals();
 
 
-$.ajax('https://repetitora.net/api/JS/Images')
+
 //DATA
 
 

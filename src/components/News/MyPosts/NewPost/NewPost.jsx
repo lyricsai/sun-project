@@ -1,15 +1,18 @@
 import './NewPost.scss'
 import React from 'react'
+import { rerenderEntireTree } from './../../../../render'
 
 const NewPost = (props) => {
-
 
 
     let newPostElement = React.createRef()
 
     let addPost = () => {
+        debugger
         let text = newPostElement.current.value
         props.addPost(text)
+        rerenderEntireTree()
+
     }
 
 

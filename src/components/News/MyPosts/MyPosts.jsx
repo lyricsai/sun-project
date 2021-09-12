@@ -6,8 +6,8 @@ import NewPost from './NewPost/NewPost';
 
 const MyPosts = (props) => {
 
-
-    let postsElements = props.state.postsData.map(post => <Post addpost={props.addPost} message={post.message} likesCounter={post.likesCounter} />)
+    debugger
+    let postsElements = props.state.postsData.map(post => <Post message={post.message} likesCounter={post.likesCounter} />)
 
 
 
@@ -15,7 +15,7 @@ const MyPosts = (props) => {
     return (
         <section className="main__posts posts">
             <h2>My Posts</h2>
-            <NewPost addpost={props.addPost} />
+            <NewPost addPost={props.addPost} />
             <div className="posts__history">
                 {postsElements}
             </div>

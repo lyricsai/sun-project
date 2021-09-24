@@ -6,11 +6,7 @@ import NewPost from './NewPost/NewPost';
 
 const MyPosts = (props) => {
 
-    debugger
     let postsElements = props.state.postsData.map(post => <Post message={post.message} likesCounter={post.likesCounter} />)
-
-
-
 
     return (
         <section className="main__posts posts">

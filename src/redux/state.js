@@ -12,8 +12,6 @@ import art11 from './../images/artworks/Litvinenka11_22x23.jpg';
 
 import { rerenderEntireTree } from './../render'
 
-
-
 let state = {
     dialogsPage: {
         messagesData: [
@@ -73,8 +71,26 @@ export let addPost = (postMessage) => {
     }
 
     state.newsPage.postsData.push(newPost)
+
     rerenderEntireTree()
 }
+
+
+export let addMessage = (dialogMessage) => {
+
+    debugger
+
+    let newMessage = {
+        id: 6,
+        message: dialogMessage,
+    }
+
+    state.dialogsPage.messagesData.push(newMessage)
+
+    rerenderEntireTree()
+}
+
+
 
 
 export default state

@@ -30,7 +30,7 @@ const App = (props) => {
           <Route path="/artschool" component={ArtSchool} />
           <Route path="/sunproject" component={SunProject} />
           <Route path="/contacts" component={Contacts} />
-          <Route path="/dialogs" render={(() => <Dialogs state={props.state.dialogsPage} />)} />
+          <Route path="/dialogs" render={(() => <Dialogs state={props.state.dialogsPage} addMessage={props.addMessage} />)} />
         </div>
         <Footer />
       </div>

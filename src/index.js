@@ -1,6 +1,5 @@
 import { rerenderEntireTree } from './render'
 import './index.css';
-
 import reportWebVitals from './reportWebVitals';
 
 

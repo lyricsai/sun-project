@@ -1,16 +1,20 @@
 import styles from './../Dialogs.module.scss'
 import React from 'react'
+import { rerenderEntireTree } from './../../../render'
 
 
 const NewMessage = (props) => {
 
     let newMessageElement = React.createRef()
 
-
     let addMessage = () => {
+
         let text = newMessageElement.current.value
-        alert(text)
+        props.addMessage(text)
+        newMessageElement.current.value = ''
+        rerenderEntireTree()
     }
+
     return (
         <div className={styles.newMessage}>
             <div className={styles.dialog__message}>

@@ -17,7 +17,7 @@ const Dialogs = (props) => {
                 </div>
                 <div className={styles.dialog__messages}>
                     {messagesElements}
-                    <NewMessage />
+                    <NewMessage addMessage={props.addMessage} />
                 </div>
             </div>
         </section>

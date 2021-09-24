@@ -56,7 +56,8 @@ let state = {
         { id: 9, artwork: art9, },
         { id: 10, artwork: art10, },
         { id: 10, artwork: art11, },
-    ]
+    ],
+
 }
 
 
@@ -89,8 +90,6 @@ export let addMessage = (dialogMessage) => {
 
     rerenderEntireTree()
 }
-
-
 
 
 export default state

@@ -13,6 +13,7 @@ import SunProject from './components/SunProject/SunProject'
 import Dialogs from './components/Dialogs/Dialogs'
 import RootPicture from './components/RootPicture/RootPicture';
 import Sidebar from './components/Sidebar/Sidebar';
+import Canvas from './components/Canvas/Canvas';
 
 
 
@@ -30,6 +31,7 @@ const App = (props) => {
           <Route path="/artschool" component={ArtSchool} />
           <Route path="/sunproject" component={SunProject} />
           <Route path="/contacts" component={Contacts} />
+          <Route path="/canvas" render={(() => <Canvas />)} />
           <Route path="/dialogs" render={(() => <Dialogs state={props.state.dialogsPage} addMessage={props.addMessage} />)} />
         </div>
         <Footer />

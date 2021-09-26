@@ -1,8 +1,26 @@
 .gallerySlide {
     display: flex;
     flex-direction: column;
-    box-shadow: 1px 10px 10px rgba(150, 150, 150, 0.2);
     margin: 50px;
-    background: #000;
     justify-content: center;
+}
+
+.swiper-container {
+    overflow: hidden;
+    position: relative;
+    height: 600px;
+    width: 100%;
+    max-width: 800px;
+    background: #000;
+
+    & img {
+        position: absolute;
+        width: 100%;
+        object-fit: scale-down;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        display: block;
+    }
 }

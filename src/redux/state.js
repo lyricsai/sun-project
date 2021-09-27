@@ -35,6 +35,7 @@ let state = {
             { id: 2, message: "Before", likesCounter: 3 },
             { id: 3, message: "Last one", likesCounter: 2 },
         ],
+        newPostText: []
     },
     sidebar: {
         friendsData: [
@@ -63,32 +64,35 @@ let state = {
 
 export let addPost = (postMessage) => {
 
-    debugger
+    if (postMessage) {
+        let newPost = {
+            id: 5,
+            message: postMessage,
+            likesCounter: 0,
+        }
 
-    let newPost = {
-        id: 5,
-        message: postMessage,
-        likesCounter: 0,
+        state.newsPage.postsData.push(newPost)
+
+        rerenderEntireTree()
     }
 
-    state.newsPage.postsData.push(newPost)
 
-    rerenderEntireTree()
 }
 
 
 export let addMessage = (dialogMessage) => {
 
-    debugger
+    if (dialogMessage) {
+        let newMessage = {
+            id: 6,
+            message: dialogMessage,
+        }
 
-    let newMessage = {
-        id: 6,
-        message: dialogMessage,
+        state.dialogsPage.messagesData.push(newMessage)
+
+        rerenderEntireTree()
     }
 
-    state.dialogsPage.messagesData.push(newMessage)
-
-    rerenderEntireTree()
 }
 
 

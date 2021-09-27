@@ -6,7 +6,7 @@
 
 .posts__history {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-self: flex-end;
     width: 75%;
     box-shadow: 1px 10px 10px rgba(150, 150, 150, 0.2), -2px -2px 10px rgba(150, 150, 150, 0.2);

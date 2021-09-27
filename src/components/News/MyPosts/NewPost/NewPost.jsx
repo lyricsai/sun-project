@@ -16,14 +16,14 @@ const NewPost = (props) => {
 
     }
 
+    let onPostChange = () => { }
 
-    debugger
 
 
     return (
         <div className="newPost">
             {/* <h4>New Post</h4> */}
-            <textarea name="" ref={newPostElement} cols="60" rows="5" className="newPost__input" placeholder="Type something..." ></textarea>
+            <textarea name="" onChange={onPostChange} value={props.newPostText} ref={newPostElement} cols="60" rows="5" className="newPost__input" placeholder="Type something..." ></textarea>
             <button type="button" value="Post It" className='newPost__button' onClick={addPost}>Post It</button>
 
 

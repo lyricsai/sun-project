@@ -27,7 +27,9 @@ let state = {
             { avatar: 'https://thumbs.dreamstime.com/b/baltic-see-very-nice-pic-klaip%C4%97da-176842928.jpg', id: 3, name: "Inna" },
             { avatar: 'https://images.pexels.com/photos/1486844/pexels-photo-1486844.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', id: 4, name: "Valentina" },
             { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP60_0QRknzoqSRgcBm7kYCv1xdOOrkZxDYQ&usqp=CAU', id: 5, name: "Olga" },
-            { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4vQ01SZk7zVEqk-ZSdsBuou75rB1Xao3QQg&usqp=CAU', id: 6, name: "Oreshechko" },],
+            { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4vQ01SZk7zVEqk-ZSdsBuou75rB1Xao3QQg&usqp=CAU', id: 6, name: "Oreshechko" },
+        ],
+        newMessageText: "Let's type something here...",
     },
     newsPage: {
         postsData: [
@@ -35,7 +37,7 @@ let state = {
             { id: 2, message: "Before", likesCounter: 3 },
             { id: 3, message: "Last one", likesCounter: 2 },
         ],
-        newPostText: []
+        newPostText: 'BlackPink in your area!',
     },
     sidebar: {
         friendsData: [
@@ -61,39 +63,51 @@ let state = {
 
 }
 
+window.state = state
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
 
-    if (postMessage) {
+    if (state.newsPage.newPostText) {
         let newPost = {
             id: 5,
-            message: postMessage,
+            message: state.newsPage.newPostText,
             likesCounter: 0,
         }
 
         state.newsPage.postsData.push(newPost)
-
-        rerenderEntireTree()
+        state.newsPage.newPostText = ''
+        rerenderEntireTree(state)
     }
+}
 
+export let updatePostText = (newText) => {
 
+    state.newsPage.newPostText = newText
+    rerenderEntireTree(state)
 }
 
 
-export let addMessage = (dialogMessage) => {
+export let addMessage = () => {
 
-    if (dialogMessage) {
+    if (state.dialogsPage.newMessageText) {
         let newMessage = {
             id: 6,
-            message: dialogMessage,
+            message: state.dialogsPage.newMessageText,
         }
 
         state.dialogsPage.messagesData.push(newMessage)
-
-        rerenderEntireTree()
+        state.dialogsPage.newMessageText = ''
+        rerenderEntireTree(state)
     }
-
 }
+
+export let updateMessageText = (newText) => {
+
+    state.dialogsPage.newMessageText = newText
+    rerenderEntireTree(state)
+}
+
+
 
 
 export default state

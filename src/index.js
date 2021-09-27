@@ -1,11 +1,10 @@
 import { rerenderEntireTree } from './render'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import state from './redux/state'
 
 
-
-
-rerenderEntireTree()
+rerenderEntireTree(state)
 
 
 // If you want to start measuring performance in your app, pass a function

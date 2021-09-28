@@ -10,7 +10,9 @@ import art9 from './../images/artworks/Litvinenka9_19x28.jpg';
 import art10 from './../images/artworks/Litvinenka10_28x40.jpg';
 import art11 from './../images/artworks/Litvinenka11_22x23.jpg';
 
-import { rerenderEntireTree } from './../render'
+let rerenderEntireTree = () => {
+    console.log('state has changed')
+}
 
 let state = {
     dialogsPage: {
@@ -76,14 +78,14 @@ export let addPost = () => {
 
         state.newsPage.postsData.push(newPost)
         state.newsPage.newPostText = ''
-        rerenderEntireTree(state)
+        rerenderEntireTree()
     }
 }
 
 export let updatePostText = (newText) => {
 
     state.newsPage.newPostText = newText
-    rerenderEntireTree(state)
+    rerenderEntireTree()
 }
 
 
@@ -97,17 +99,19 @@ export let addMessage = () => {
 
         state.dialogsPage.messagesData.push(newMessage)
         state.dialogsPage.newMessageText = ''
-        rerenderEntireTree(state)
+        rerenderEntireTree()
     }
 }
 
 export let updateMessageText = (newText) => {
 
     state.dialogsPage.newMessageText = newText
-    rerenderEntireTree(state)
+    rerenderEntireTree()
 }
 
-
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer
+}
 
 
 export default state

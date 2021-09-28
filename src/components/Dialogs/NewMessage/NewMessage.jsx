@@ -7,15 +7,13 @@ const NewMessage = (props) => {
 
     let addMessage = () => {
 
-        let text = newMessageElement.current.value
-        props.addMessage(text)
+        props.dispatch({ type: 'ADD-MESSAGE' })
     }
 
     let onMessageChange = () => {
 
         let text = newMessageElement.current.value
-        props.updateMessageText(text)
-        console.log(props.newMessageText)
+        props.dispatch({ type: 'UPDATE-MESSAGE-TEXT', newText: text })
 
     }
 

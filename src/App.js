@@ -28,8 +28,7 @@ const App = (props) => {
           <Route path="/aboutme" render={(() => <AboutMe />)} />
           <Route path="/news" render={(() => <News
             state={props.state.newsPage}
-            addPost={props.addPost}
-            updatePostText={props.updatePostText} />)} />
+            dispatch={props.dispatch} />)} />
           <Route path="/artworks" render={(() => <Artworks
             state={props.state.artworks} />)} />
           <Route path="/artschool" component={ArtSchool} />
@@ -39,8 +38,8 @@ const App = (props) => {
           <Route path="/dialogs" render={(() => <Dialogs
 
             state={props.state.dialogsPage}
-            addMessage={props.addMessage}
-            updateMessageText={props.updateMessageText} />)} />
+            dispatch={props.dispatch}
+          />)} />
         </div>
         <Footer />
       </div>

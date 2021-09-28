@@ -12,9 +12,8 @@ const MyPosts = (props) => {
         <section className="main__posts posts">
             <h2>My Posts</h2>
             <NewPost
-                addPost={props.addPost}
                 newPostText={props.state.newPostText}
-                updatePostText={props.updatePostText} />
+                dispatch={props.dispatch} />
             <div className="posts__history">
                 {postsElements}
             </div>

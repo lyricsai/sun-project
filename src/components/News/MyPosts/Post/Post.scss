@@ -1,5 +1,8 @@
 .post__container {
     position: relative;
+    &:first-child {
+        margin-bottom: 30px;
+    }
 }
 .post__button {
     display: inline-block;

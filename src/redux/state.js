@@ -10,108 +10,112 @@ import art9 from './../images/artworks/Litvinenka9_19x28.jpg';
 import art10 from './../images/artworks/Litvinenka10_28x40.jpg';
 import art11 from './../images/artworks/Litvinenka11_22x23.jpg';
 
-let rerenderEntireTree = () => {
-    console.log('state has changed')
-}
-
-let state = {
-    dialogsPage: {
-        messagesData: [
-            { id: 1, message: "Hey, your new artwork is awesome!!!" },
-            { id: 2, message: "Is it available for a sale?" },
-            { id: 3, message: "haha" },
-            { id: 4, message: "thank you" },
-            { id: 5, message: "What about delivery?" },
+let store = {
+    _state: {
+        dialogsPage: {
+            messagesData: [
+                { id: 1, message: "Hey, your new artwork is awesome!!!" },
+                { id: 2, message: "Is it available for a sale?" },
+                { id: 3, message: "haha" },
+                { id: 4, message: "thank you" },
+                { id: 5, message: "What about delivery?" },
+            ],
+            dialogsData: [
+                { avatar: 'https://i.pinimg.com/736x/07/8f/f2/078ff215ee244b5f24ca8a71a8e358b3.jpg', id: 1, name: "Anastasiya" },
+                { avatar: 'https://www.teahub.io/photos/full/76-768446_nice-pic-hd-download.jpg', id: 2, name: "Jannet", },
+                { avatar: 'https://thumbs.dreamstime.com/b/baltic-see-very-nice-pic-klaip%C4%97da-176842928.jpg', id: 3, name: "Inna" },
+                { avatar: 'https://images.pexels.com/photos/1486844/pexels-photo-1486844.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', id: 4, name: "Valentina" },
+                { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP60_0QRknzoqSRgcBm7kYCv1xdOOrkZxDYQ&usqp=CAU', id: 5, name: "Olga" },
+                { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4vQ01SZk7zVEqk-ZSdsBuou75rB1Xao3QQg&usqp=CAU', id: 6, name: "Oreshechko" },
+            ],
+            newMessageText: "Let's type something here...",
+        },
+        newsPage: {
+            postsData: [
+                { id: 1, message: "Long Ago", likesCounter: 11 },
+                { id: 2, message: "Before", likesCounter: 3 },
+                { id: 3, message: "Last one", likesCounter: 2 },
+            ],
+            newPostText: 'BlackPink in your area!',
+        },
+        sidebar: {
+            friendsData: [
+                { avatar: 'https://www.teahub.io/photos/full/76-768446_nice-pic-hd-download.jpg', id: 2, name: "Jannet", },
+                { avatar: 'https://thumbs.dreamstime.com/b/baltic-see-very-nice-pic-klaip%C4%97da-176842928.jpg', id: 3, name: "Inna" },
+                { avatar: 'https://images.pexels.com/photos/1486844/pexels-photo-1486844.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', id: 4, name: "Valentina" },
+                { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP60_0QRknzoqSRgcBm7kYCv1xdOOrkZxDYQ&usqp=CAU', id: 5, name: "Olga" },
+                { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4vQ01SZk7zVEqk-ZSdsBuou75rB1Xao3QQg&usqp=CAU', id: 6, name: "Oreshechko" },],
+        },
+        artworks: [
+            { id: 1, artwork: art1, },
+            { id: 2, artwork: art2, },
+            { id: 3, artwork: art3, },
+            { id: 4, artwork: art4, },
+            { id: 5, artwork: art5, },
+            { id: 6, artwork: art6, },
+            { id: 7, artwork: art7, },
+            { id: 8, artwork: art8, },
+            { id: 9, artwork: art9, },
+            { id: 10, artwork: art10, },
+            { id: 10, artwork: art11, },
         ],
-        dialogsData: [
-            { avatar: 'https://i.pinimg.com/736x/07/8f/f2/078ff215ee244b5f24ca8a71a8e358b3.jpg', id: 1, name: "Anastasiya" },
-            { avatar: 'https://www.teahub.io/photos/full/76-768446_nice-pic-hd-download.jpg', id: 2, name: "Jannet", },
-            { avatar: 'https://thumbs.dreamstime.com/b/baltic-see-very-nice-pic-klaip%C4%97da-176842928.jpg', id: 3, name: "Inna" },
-            { avatar: 'https://images.pexels.com/photos/1486844/pexels-photo-1486844.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', id: 4, name: "Valentina" },
-            { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP60_0QRknzoqSRgcBm7kYCv1xdOOrkZxDYQ&usqp=CAU', id: 5, name: "Olga" },
-            { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4vQ01SZk7zVEqk-ZSdsBuou75rB1Xao3QQg&usqp=CAU', id: 6, name: "Oreshechko" },
-        ],
-        newMessageText: "Let's type something here...",
+
     },
-    newsPage: {
-        postsData: [
-            { id: 1, message: "Long Ago", likesCounter: 11 },
-            { id: 2, message: "Before", likesCounter: 3 },
-            { id: 3, message: "Last one", likesCounter: 2 },
-        ],
-        newPostText: 'BlackPink in your area!',
+    _callSubscriber() {
+        console.log('state has changed')
     },
-    sidebar: {
-        friendsData: [
-            { avatar: 'https://www.teahub.io/photos/full/76-768446_nice-pic-hd-download.jpg', id: 2, name: "Jannet", },
-            { avatar: 'https://thumbs.dreamstime.com/b/baltic-see-very-nice-pic-klaip%C4%97da-176842928.jpg', id: 3, name: "Inna" },
-            { avatar: 'https://images.pexels.com/photos/1486844/pexels-photo-1486844.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', id: 4, name: "Valentina" },
-            { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP60_0QRknzoqSRgcBm7kYCv1xdOOrkZxDYQ&usqp=CAU', id: 5, name: "Olga" },
-            { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4vQ01SZk7zVEqk-ZSdsBuou75rB1Xao3QQg&usqp=CAU', id: 6, name: "Oreshechko" },],
+
+    getState() {
+        return this._state
     },
-    artworks: [
-        { id: 1, artwork: art1, },
-        { id: 2, artwork: art2, },
-        { id: 3, artwork: art3, },
-        { id: 4, artwork: art4, },
-        { id: 5, artwork: art5, },
-        { id: 6, artwork: art6, },
-        { id: 7, artwork: art7, },
-        { id: 8, artwork: art8, },
-        { id: 9, artwork: art9, },
-        { id: 10, artwork: art10, },
-        { id: 10, artwork: art11, },
-    ],
 
-}
+    subscribe(observer) {
+        this._callSubscriber = observer
+    },
 
-window.state = state
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
 
-export let addPost = () => {
+            if (this._state.newsPage.newPostText) {
+                let newPost = {
+                    id: 5,
+                    message: this._state.newsPage.newPostText,
+                    likesCounter: 0,
+                }
 
-    if (state.newsPage.newPostText) {
-        let newPost = {
-            id: 5,
-            message: state.newsPage.newPostText,
-            likesCounter: 0,
+                this._state.newsPage.postsData.push(newPost)
+                this._state.newsPage.newPostText = ''
+                this._callSubscriber()
+
+            }
+        } else if (action.type === 'UPDATE-POST-TEXT') {
+
+            this._state.newsPage.newPostText = action.newText
+            this._callSubscriber()
+
+        } else if (action.type === 'ADD-MESSAGE') {
+
+            if (this._state.dialogsPage.newMessageText) {
+                let newMessage = {
+                    id: 6,
+                    message: this._state.dialogsPage.newMessageText,
+                }
+
+                this._state.dialogsPage.messagesData.push(newMessage)
+                this._state.dialogsPage.newMessageText = ''
+                this._callSubscriber()
+            }
+
+        } else if (action.type === 'UPDATE-MESSAGE-TEXT') {
+
+            this._state.dialogsPage.newMessageText = action.newText
+            this._callSubscriber()
         }
-
-        state.newsPage.postsData.push(newPost)
-        state.newsPage.newPostText = ''
-        rerenderEntireTree()
     }
-}
 
-export let updatePostText = (newText) => {
-
-    state.newsPage.newPostText = newText
-    rerenderEntireTree()
 }
 
 
-export let addMessage = () => {
+export default store
 
-    if (state.dialogsPage.newMessageText) {
-        let newMessage = {
-            id: 6,
-            message: state.dialogsPage.newMessageText,
-        }
-
-        state.dialogsPage.messagesData.push(newMessage)
-        state.dialogsPage.newMessageText = ''
-        rerenderEntireTree()
-    }
-}
-
-export let updateMessageText = (newText) => {
-
-    state.dialogsPage.newMessageText = newText
-    rerenderEntireTree()
-}
-
-export const subscribe = (observer) => {
-    rerenderEntireTree = observer
-}
-
-
-export default state
+window.store = store

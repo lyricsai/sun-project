@@ -7,14 +7,13 @@ const NewPost = (props) => {
 
     let addPost = () => {
 
-        let text = newPostElement.current.value
-        props.addPost(text)
+        props.dispatch({ type: 'ADD-POST' })
     }
 
     let onPostChange = () => {
 
         let text = newPostElement.current.value
-        props.updatePostText(text)
+        props.dispatch({ type: 'UPDATE-POST-TEXT', newText: text })
 
     }
 

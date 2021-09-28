@@ -3,7 +3,16 @@
     // background-color: black;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
     color: darksilver;
     text-align: center;
+    --swiper-navigation-color: #808080;
+    --swiper-pagination-color: #808080;
+
+    .swiper-pagination-bullet {
+        background: #eee;
+    }
+}
+.swiper-pagination-bullets {
+    bottom: 40px !important;
 }

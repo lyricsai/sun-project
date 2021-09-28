@@ -6,7 +6,7 @@ const News = (props) => {
         <div>
             <section className="news">
                 <h2 className="about__artist">News</h2>
-                <MyPosts state={props.state} addPost={props.addPost} updatePostText={props.updatePostText} />
+                <MyPosts state={props.state} dispatch={props.dispatch} />
             </section>
         </div>
     )

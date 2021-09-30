@@ -10,6 +10,12 @@ import art9 from './../images/artworks/Litvinenka9_19x28.jpg';
 import art10 from './../images/artworks/Litvinenka10_28x40.jpg';
 import art11 from './../images/artworks/Litvinenka11_22x23.jpg';
 
+const ADD_POST = 'ADD_POST'
+const UPDATE_POST_TEXT = 'UPDATE_POST_TEXT'
+const ADD_MESSAGE = 'ADD_MESSAGE'
+const UPDATE_MESSAGE_TEXT = 'UPDATE_MESSAGE_TEXT'
+
+
 let store = {
     _state: {
         dialogsPage: {
@@ -74,7 +80,7 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
 
             if (this._state.newsPage.newPostText) {
                 let newPost = {
@@ -88,12 +94,12 @@ let store = {
                 this._callSubscriber()
 
             }
-        } else if (action.type === 'UPDATE-POST-TEXT') {
+        } else if (action.type === UPDATE_POST_TEXT) {
 
             this._state.newsPage.newPostText = action.newText
             this._callSubscriber()
 
-        } else if (action.type === 'ADD-MESSAGE') {
+        } else if (action.type === ADD_MESSAGE) {
 
             if (this._state.dialogsPage.newMessageText) {
                 let newMessage = {
@@ -106,7 +112,7 @@ let store = {
                 this._callSubscriber()
             }
 
-        } else if (action.type === 'UPDATE-MESSAGE-TEXT') {
+        } else if (action.type === UPDATE_MESSAGE_TEXT) {
 
             this._state.dialogsPage.newMessageText = action.newText
             this._callSubscriber()
@@ -115,6 +121,23 @@ let store = {
 
 }
 
+export const addMessageActionCreator = () => ({ type: ADD_MESSAGE })
+
+export const updateMessageTextActionCreator = (text) => {
+    return {
+        type: UPDATE_MESSAGE_TEXT,
+        newText: text
+    }
+}
+
+export const addPostActionCreator = () => ({ type: ADD_POST })
+
+export const updatePostTextActionCreator = (text) => {
+    return {
+        type: UPDATE_POST_TEXT,
+        newText: text,
+    }
+}
 
 export default store
 

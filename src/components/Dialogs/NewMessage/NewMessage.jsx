@@ -1,19 +1,22 @@
 import styles from './../Dialogs.module.scss'
 import React from 'react'
 
+import { addMessageActionCreator, updateMessageTextActionCreator } from '../../../redux/state'
+
 const NewMessage = (props) => {
 
     let newMessageElement = React.createRef()
 
     let addMessage = () => {
 
-        props.dispatch({ type: 'ADD-MESSAGE' })
+        props.dispatch(addMessageActionCreator())
     }
 
     let onMessageChange = () => {
 
         let text = newMessageElement.current.value
-        props.dispatch({ type: 'UPDATE-MESSAGE-TEXT', newText: text })
+        let action = updateMessageTextActionCreator(text)
+        props.dispatch(action)
 
     }
 

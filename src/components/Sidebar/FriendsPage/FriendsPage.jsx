@@ -9,10 +9,12 @@ const FriendsPage = (props) => {
 
     return (
         <div className="friendsPage">
-            <h3 className='friendsPageTitle' >Friends</h3>
-            <NavLink to="/friends" className='friendsLink'></NavLink>
-            {/* <img src={props.state.friendsData.avatar} alt="avatar" /> */}
-            {friendsElements}
+
+            <NavLink to="/friends" className='friendsLink'>
+                <h3 className='friendsPageTitle' >Friends</h3>
+            </NavLink>
+            <div className="friends__container">{friendsElements}</div>
+
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import './NewPost.scss'
 import React from 'react'
 
-import { addPostActionCreator, updatePostTextActionCreator } from '../../../../redux/state'
+import { addPostActionCreator, updatePostTextActionCreator } from '../../../../redux/newsPageReducer'
 
 
 const NewPost = (props) => {

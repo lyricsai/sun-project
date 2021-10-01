@@ -1,9 +1,11 @@
 .friendsItem {
-    display: flex;
-    align-items: center;
-    justify-self: center;
+    display: inline-flex;
+    flex-direction: column;
+    // align-items: center;
+    width: 40px;
     white-space: wrap;
     overflow: hidden;
+    padding: 5px;
 }
 
 .friendsAvatarContainer {
@@ -12,7 +14,8 @@
     overflow: hidden;
     border-radius: 50%;
     position: relative;
-    // margin: 20px;
+    margin: 5px;
+    // align-self: center;
 }
 
 .friendsAvatarContainer img {
@@ -21,4 +24,9 @@
     position: absolute;
     top: 0;
     object-fit: cover;
+}
+
+.friend__name {
+    // white-space: wrap;
+    // overflow: hidden;
 }

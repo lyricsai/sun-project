@@ -36,7 +36,6 @@ const App = (props) => {
           <Route path="/contacts" component={Contacts} />
           <Route path="/canvas" render={(() => <Canvas />)} />
           <Route path="/dialogs" render={(() => <Dialogs
-
             state={props.state.dialogsPage}
             dispatch={props.dispatch}
           />)} />

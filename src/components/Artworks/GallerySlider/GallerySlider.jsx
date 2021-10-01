@@ -13,7 +13,7 @@ import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 let GallerySlider = (props) => {
-    let sliderElements = props.state.map(artwork => <Slide artwork={artwork.artwork} id={artwork.id} />)
+    let sliderElements = props.state.artworks.map(artwork => <Slide artwork={artwork.artwork} id={artwork.id} />)
     return (
         <Swiper
             module={Autoplay}

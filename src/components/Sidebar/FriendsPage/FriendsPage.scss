@@ -1,13 +1,20 @@
 .friendsPage {
+    width: 100%;
     margin: 20px;
     padding: 20px;
     border-radius: 1rem;
     box-shadow: 1px 10px 10px rgba(150, 150, 150, 0.2), -2px -2px 10px rgba(150, 150, 150, 0.2);
 }
+
 .friendsLink {
     text-align: center;
-    display: inline-block;
 }
 .friendsPageTitle {
     font-size: 20px;
+    padding-bottom: 20px;
+}
+.friends__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

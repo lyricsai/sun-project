@@ -1,22 +1,19 @@
 import styles from './../Dialogs.module.scss'
 import React from 'react'
 
-import { addMessageActionCreator, updateMessageTextActionCreator } from '../../../redux/state'
+import { addMessageActionCreator, updateMessageTextActionCreator } from '../../../redux/dialogsPageReducer'
 
 const NewMessage = (props) => {
-
-    let newMessageElement = React.createRef()
 
     let addMessage = () => {
 
         props.dispatch(addMessageActionCreator())
     }
 
-    let onMessageChange = () => {
+    let onMessageChange = (event) => {
 
-        let text = newMessageElement.current.value
-        let action = updateMessageTextActionCreator(text)
-        props.dispatch(action)
+        let text = event.target.value
+        props.dispatch(updateMessageTextActionCreator(text))
 
     }
 
@@ -26,7 +23,6 @@ const NewMessage = (props) => {
                 <textarea
 
                     name=""
-                    ref={newMessageElement}
                     cols="50" rows="2"
                     className="newMessage__input"
                     placeholder="Type something..."

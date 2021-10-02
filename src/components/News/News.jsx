@@ -1,12 +1,12 @@
 import './News.scss';
-import MyPosts from './/MyPosts/MyPosts';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 
-const News = (props) => {
+const News = () => {
     return (
         <div>
             <section className="news">
                 <h2 className="about__artist">My news</h2>
-                <MyPosts state={props.state} dispatch={props.dispatch} />
+                <MyPostsContainer />
             </section>
         </div>
     )

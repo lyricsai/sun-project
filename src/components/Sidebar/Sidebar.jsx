@@ -1,13 +1,13 @@
-import FriendsPage from './FriendsPage/FriendsPage'
+import FriendsPageContainer from './FriendsPage/FriendsPageContainer'
 import Nav from './Nav/Nav'
 import './Sidebar.scss'
 
-const Sidebar = (props) => {
+const Sidebar = () => {
     return (
 
         <aside className='sidebar'>
             <Nav />
-            <FriendsPage state={props.state} />
+            <FriendsPageContainer />
         </aside>
     )
 }

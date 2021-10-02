@@ -1,23 +1,23 @@
 import { addPostActionCreator, updatePostTextActionCreator } from '../../../../redux/newsPageReducer'
 import NewPost from './NewPost'
+import { connect } from 'react-redux'
 
-
-const NewPostContainer = (props) => {
-
-    let addPost = () => {
-        props.dispatch(addPostActionCreator())
+let mapStateToProps = (state) => {
+    return {
+        newPostText: state.newsPage.newPostText,
     }
-
-    let onPostChange = (text) => {
-
-        let action = updatePostTextActionCreator(text)
-        props.dispatch(action)
-
-    }
-
-    return (
-        <NewPost updatePostText={onPostChange} addPost={addPost} newPostText={props.newPostText} />
-    )
 }
+let mapDispatchToProps = (dispatch) => {
+    return {
+        addPost: () => {
+            dispatch(addPostActionCreator())
+        },
+        updatePostText: (text) => {
+            dispatch(updatePostTextActionCreator(text))
+        }
+    }
+}
+
+let NewPostContainer = connect(mapStateToProps, mapDispatchToProps)(NewPost)
 
 export default NewPostContainer

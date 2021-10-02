@@ -1,13 +1,13 @@
 import './Artworks.scss'
-import GallerySlider from './GallerySlider/GallerySlider'
+import GallerySliderContainer from './GallerySlider/GallerySliderContainer'
 
-const Artworks = (props) => {
+const Artworks = () => {
     return (
 
         <section className="myArtworks">
             <h2 className='myArtworksTitle' >My Art Gallery</h2>
 
-            <GallerySlider state={props.state} />
+            <GallerySliderContainer />
 
         </section>
 

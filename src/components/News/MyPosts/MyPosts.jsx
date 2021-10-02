@@ -1,23 +1,16 @@
 import './MyPosts.scss';
-import Post from './Post/Post'
 import NewPostContainer from './NewPost/NewPostContainer';
-
-
 
 const MyPosts = (props) => {
 
-    let postsElements = props.state.postsData.map(post => <Post message={post.message} likesCounter={post.likesCounter} />)
-
     return (
         <section className="main__posts posts">
-            <NewPostContainer
-                newPostText={props.state.newPostText}
-                dispatch={props.dispatch} />
+            <NewPostContainer />
             <div className="posts__history">
-                {postsElements}
+                {props.postsElements}
             </div>
-        </section>
-    )
+        </section>)
 }
+
 
 export default MyPosts

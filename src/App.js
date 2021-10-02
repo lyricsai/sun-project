@@ -1,7 +1,6 @@
 import './App.css';
 import { BrowserRouter, Route, } from "react-router-dom";
-import StoreContext from './StoreContext'
-
+import { Provider } from 'react-redux'
 
 import Header from './components/Header/Header'
 import AboutMe from './components/AboutMe/AboutMe'
@@ -11,40 +10,40 @@ import Artworks from './components/Artworks/Artworks'
 import ArtSchool from './components/ArtSchool/ArtSchool'
 import Contacts from './components/Contacts/Contacts'
 import SunProject from './components/SunProject/SunProject'
-import Dialogs from './components/Dialogs/Dialogs'
 import RootPicture from './components/RootPicture/RootPicture';
 import Sidebar from './components/Sidebar/Sidebar';
-import Canvas from './components/Canvas/Canvas';
+// import Canvas from './components/Canvas/Canvas';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 
 
 const App = (props) => {
   return (
     <BrowserRouter>
-      <StoreContext.Provider value={props.store}>
+      <Provider store={props.store}>
+
         <div className="app__wrapper">
+
           <Header />
-          <Sidebar state={props.state.sidebar} />
+          <Sidebar />
+
           <div className="app__wrapper_content">
             <Route exact path="/" component={RootPicture} />
             <Route path="/aboutme" render={(() => <AboutMe />)} />
-            <Route path="/news" render={(() => <News
-              state={props.state.newsPage}
-              dispatch={props.dispatch} />)} />
-            <Route path="/artworks" render={(() => <Artworks
-              state={props.state.artworks} />)} />
-            <Route path="/artschool" component={ArtSchool} />
-            <Route path="/sunproject" component={SunProject} />
+            <Route path="/news" render={(() => <News />)} />
+            <Route path="/artworks" render={(() => <Artworks />)} />
+            <Route path="/artschool" render={(() => <ArtSchool />)} />
+            <Route path="/sunproject" render={(() => <SunProject />)} />
             <Route path="/contacts" component={Contacts} />
-            <Route path="/canvas" render={(() => <Canvas />)} />
-            <Route path="/dialogs" render={(() => <Dialogs
-              state={props.state.dialogsPage}
-              dispatch={props.dispatch}
-            />)} />
+            {/* <Route path="/canvas" render={(() => <Canvas />)} /> */}
+            <Route path="/dialogs" render={(() => <DialogsContainer />)} />
           </div>
+
           <Footer />
+
         </div>
-      </StoreContext.Provider>
+
+      </Provider>
     </BrowserRouter >
   );
 }

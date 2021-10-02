@@ -7,7 +7,7 @@ let initialState = {
         { id: 2, message: "Before", likesCounter: 3 },
         { id: 3, message: "Last one", likesCounter: 2 },
     ],
-    newPostText: 'BlackPink in your area!',
+    newPostText: 'I need help...',
 }
 
 const newsPageReducer = (state = initialState, action) => {
@@ -29,8 +29,6 @@ const newsPageReducer = (state = initialState, action) => {
             return state
 
         case UPDATE_POST_TEXT:
-
-            debugger
 
             state.newPostText = action.newText
 

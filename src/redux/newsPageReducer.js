@@ -30,6 +30,8 @@ const newsPageReducer = (state = initialState, action) => {
 
         case UPDATE_POST_TEXT:
 
+            debugger
+
             state.newPostText = action.newText
 
             return state

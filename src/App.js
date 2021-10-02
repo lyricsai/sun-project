@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Route, } from "react-router-dom";
+import StoreContext from './StoreContext'
 
 
 import Header from './components/Header/Header'
@@ -20,28 +21,30 @@ import Canvas from './components/Canvas/Canvas';
 const App = (props) => {
   return (
     <BrowserRouter>
-      <div className="app__wrapper">
-        <Header />
-        <Sidebar state={props.state.sidebar} />
-        <div className="app__wrapper_content">
-          <Route exact path="/" component={RootPicture} />
-          <Route path="/aboutme" render={(() => <AboutMe />)} />
-          <Route path="/news" render={(() => <News
-            state={props.state.newsPage}
-            dispatch={props.dispatch} />)} />
-          <Route path="/artworks" render={(() => <Artworks
-            state={props.state.artworks} />)} />
-          <Route path="/artschool" component={ArtSchool} />
-          <Route path="/sunproject" component={SunProject} />
-          <Route path="/contacts" component={Contacts} />
-          <Route path="/canvas" render={(() => <Canvas />)} />
-          <Route path="/dialogs" render={(() => <Dialogs
-            state={props.state.dialogsPage}
-            dispatch={props.dispatch}
-          />)} />
+      <StoreContext.Provider value={props.store}>
+        <div className="app__wrapper">
+          <Header />
+          <Sidebar state={props.state.sidebar} />
+          <div className="app__wrapper_content">
+            <Route exact path="/" component={RootPicture} />
+            <Route path="/aboutme" render={(() => <AboutMe />)} />
+            <Route path="/news" render={(() => <News
+              state={props.state.newsPage}
+              dispatch={props.dispatch} />)} />
+            <Route path="/artworks" render={(() => <Artworks
+              state={props.state.artworks} />)} />
+            <Route path="/artschool" component={ArtSchool} />
+            <Route path="/sunproject" component={SunProject} />
+            <Route path="/contacts" component={Contacts} />
+            <Route path="/canvas" render={(() => <Canvas />)} />
+            <Route path="/dialogs" render={(() => <Dialogs
+              state={props.state.dialogsPage}
+              dispatch={props.dispatch}
+            />)} />
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </StoreContext.Provider>
     </BrowserRouter >
   );
 }

@@ -1,19 +1,11 @@
 import styles from './../Dialogs.module.scss'
-import React from 'react'
-
-import { addMessageActionCreator, updateMessageTextActionCreator } from '../../../redux/dialogsPageReducer'
 
 const NewMessage = (props) => {
-
-    let addMessage = () => {
-
-        props.dispatch(addMessageActionCreator())
-    }
 
     let onMessageChange = (event) => {
 
         let text = event.target.value
-        props.dispatch(updateMessageTextActionCreator(text))
+        props.updateMessageText(text)
 
     }
 
@@ -33,7 +25,7 @@ const NewMessage = (props) => {
             </div>
             <button type="button" value="Send"
                 className={styles.newMessage__button}
-                onClick={addMessage}>Send</button>
+                onClick={props.addMessage}>Send</button>
         </div>
     )
 }

@@ -1,22 +1,14 @@
 import './NewPost.scss'
 import React from 'react'
 
-import { addPostActionCreator, updatePostTextActionCreator } from '../../../../redux/newsPageReducer'
-
-
 const NewPost = (props) => {
 
     let newPostElement = React.createRef()
 
-    let addPost = () => {
-        props.dispatch(addPostActionCreator())
-    }
-
     let onPostChange = () => {
 
         let text = newPostElement.current.value
-        let action = updatePostTextActionCreator(text)
-        props.dispatch(action)
+        props.updatePostText(text)
 
     }
 
@@ -31,10 +23,12 @@ const NewPost = (props) => {
                 className="newPost__input"
                 placeholder="Type something..." >
             </textarea>
+
             <button type="button"
                 value="Post It"
                 className='newPost__button'
-                onClick={addPost}>Post It</button>
+                onClick={props.addPost}>Post It
+            </button>
         </div>
     )
 }

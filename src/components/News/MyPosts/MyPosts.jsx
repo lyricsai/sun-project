@@ -1,6 +1,6 @@
 import './MyPosts.scss';
 import Post from './Post/Post'
-import NewPost from './NewPost/NewPost';
+import NewPostContainer from './NewPost/NewPostContainer';
 
 
 
@@ -10,8 +10,7 @@ const MyPosts = (props) => {
 
     return (
         <section className="main__posts posts">
-            <h2>My Posts</h2>
-            <NewPost
+            <NewPostContainer
                 newPostText={props.state.newPostText}
                 dispatch={props.dispatch} />
             <div className="posts__history">

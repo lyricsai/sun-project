@@ -1,7 +1,7 @@
 import styles from './Dialogs.module.scss'
 import DialogMessage from './DialogMessage/DialogMessage'
 import DialogItem from './DialogItem/DialogItem'
-import NewMessage from './NewMessage/NewMessage'
+import NewMessageContainer from './NewMessage/NewMessageContainer'
 
 const Dialogs = (props) => {
 
@@ -17,7 +17,7 @@ const Dialogs = (props) => {
                 </div>
                 <div className={styles.dialog__messages}>
                     {messagesElements}
-                    <NewMessage
+                    <NewMessageContainer
                         dispatch={props.dispatch}
                         newMessageText={props.state.newMessageText}
                     />

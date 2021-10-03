@@ -7,42 +7,46 @@ let initialState = {
         { id: 2, message: "Before", likesCounter: 3 },
         { id: 3, message: "Last one", likesCounter: 2 },
     ],
-    newPostText: 'I need help...',
+    newPostText: 'BlackPink in your area!..',
 }
 
 const newsPageReducer = (state = initialState, action) => {
 
     switch (action.type) {
+
         case ADD_POST:
+            let stateCopy = {
+                ...state,
+            }
+            if (stateCopy.newPostText) {
 
-            if (state.newPostText) {
-                let newPost = {
-                    id: 5,
-                    message: state.newPostText,
-                    likesCounter: 0,
+                let postsNumber = Object.keys(stateCopy.postsData).length
+
+                stateCopy = {
+                    ...state,
+                    postsData: [...state.postsData,
+                    {
+                        id: postsNumber + 1,
+                        message: stateCopy.newPostText,
+                        likesCounter: 0,
+                    }],
+                    newPostText: '',
                 }
-
-                state.postsData.push(newPost)
-                state.newPostText = ''
             }
 
-            return state
+            return stateCopy
 
         case UPDATE_POST_TEXT:
 
-            state.newPostText = action.newText
+            return {
+                ...state,
+                newPostText: action.newText
+            }
 
-            return state
-
-        default:
-
-            return state
+        default: return state
 
     }
-
-
 }
-
 
 export const addPostActionCreator = () => ({ type: ADD_POST })
 

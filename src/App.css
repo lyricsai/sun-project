@@ -67,6 +67,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
+  background: inherit;
 }
 input::-ms-clear {
   display: none;

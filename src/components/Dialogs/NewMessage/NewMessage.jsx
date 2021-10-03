@@ -13,10 +13,9 @@ const NewMessage = (props) => {
         <div className={styles.newMessage}>
             <div className={styles.dialog__message}>
                 <textarea
-
                     name=""
                     cols="50" rows="2"
-                    className="newMessage__input"
+                    className={styles.newMessage__input}
                     placeholder="Type something..."
                     value={props.newMessageText}
                     onChange={onMessageChange}  >

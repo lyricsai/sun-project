@@ -3,9 +3,7 @@ import NewPost from './NewPost'
 import { connect } from 'react-redux'
 
 let mapStateToProps = (state) => {
-    return {
-        newPostText: state.newsPage.newPostText,
-    }
+    return { newPostText: state.newsPage.newPostText, }
 }
 let mapDispatchToProps = (dispatch) => {
     return {

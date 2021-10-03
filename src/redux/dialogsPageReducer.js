@@ -25,32 +25,31 @@ const dialogsPageReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_MESSAGE:
 
-            if (state.newMessageText) {
-                let newMessage = {
-                    id: 0,
-                    message: state.newMessageText,
+            let stateCopy = { ...state, }
+            if (stateCopy.newMessageText) {
+
+                let messagesNumber = Object.keys(stateCopy.messagesData).length
+
+                stateCopy = {
+                    ...state,
+                    messagesData: [...state.messagesData,
+                    { id: messagesNumber + 1, message: stateCopy.newMessageText, }],
+                    newMessageText: '',
                 }
-
-                state.messagesData.push(newMessage)
-                state.newMessageText = ''
-
             }
 
-            return state
+            return stateCopy
 
         case UPDATE_MESSAGE_TEXT:
 
-            state.newMessageText = action.newText
+            return {
+                ...state,
+                newMessageText: action.newText
+            }
 
-            return state
-
-        default:
-
-            return state
+        default: return state
     }
-
 }
-
 
 export const addMessageActionCreator = () => ({
     type: ADD_MESSAGE,
@@ -60,7 +59,7 @@ export const addMessageActionCreator = () => ({
 export const updateMessageTextActionCreator = (text) => {
     return {
         type: UPDATE_MESSAGE_TEXT,
-        newText: text
+        newText: text,
     }
 }
 

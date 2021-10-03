@@ -5,7 +5,7 @@ import MyPosts from './MyPosts'
 
 let mapStateToProps = (state) => {
     return {
-        postsElements: state.newsPage.postsData.map(post => <Post message={post.message} likesCounter={post.likesCounter} />)
+        postsElements: state.newsPage.postsData.map(post => <Post message={post.message} key={post.id} likesCounter={post.likesCounter} />)
     }
 }
 let mapDispatchToProps = (dispatch) => {

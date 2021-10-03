@@ -1,4 +1,4 @@
-import FriendsPageContainer from './FriendsPage/FriendsPageContainer'
+import FriendsOnlineContainer from './FriendsOnline/FriendsOnlineContainer'
 import Nav from './Nav/Nav'
 import './Sidebar.scss'
 
@@ -7,7 +7,7 @@ const Sidebar = () => {
 
         <aside className='sidebar'>
             <Nav />
-            <FriendsPageContainer />
+            <FriendsOnlineContainer />
         </aside>
     )
 }

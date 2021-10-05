@@ -1,5 +1,5 @@
-// const FOLLOW = 'FOLLOW'
-// const UNFOLLOW = 'UNFOLLOW'
+const FOLLOW = 'FOLLOW'
+const UN_FOLLOW = 'UN_FOLLOW'
 const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW'
 const SET_USERS = 'SET_USERS'
 
@@ -11,41 +11,40 @@ let initialState = {
         { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP60_0QRknzoqSRgcBm7kYCv1xdOOrkZxDYQ&usqp=CAU', id: 5, name: "Olga" },
         { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4vQ01SZk7zVEqk-ZSdsBuou75rB1Xao3QQg&usqp=CAU', id: 6, name: "Antanina" },
     ],
-    usersData: [
-        { id: 1, firstName: 'Anastasiya', lastName: 'Litvinenka', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Studying React for Front-End Development', avatar: 'url' },
-        { id: 2, firstName: 'Jannet', lastName: 'Sluzhenko', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Drawing dramatic stories', avatar: 'url' },
-        { id: 3, firstName: 'Inna', lastName: '', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'From economics to comics', avatar: 'url' },
-        { id: 4, firstName: 'Valentina', lastName: '', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Drawing with kindergardeners', avatar: 'url' },
-        { id: 5, firstName: 'Olga', lastName: 'Hurshchankova', following: false, location: { city: 'Gomel', country: 'Belarus' }, status: 'Hiding in Stomatology', avatar: 'url' },
-        { id: 6, firstName: 'Antanina', lastName: 'Areshachka', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Living on the clouds', avatar: 'url' },
-    ]
+    usersData:
+        [
+            // { id: 1, firstName: 'Anastasiya', lastName: 'Litvinenka', following: false, location: { city: 'Gomel', country: 'Belarus' }, status: 'Studying React for Front-End Development', avatar: 'url' },
+            // { id: 2, firstName: 'Jannet', lastName: 'Sluzhenko', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Drawing dramatic stories', avatar: 'url' },
+            // { id: 3, firstName: 'Inna', lastName: '', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'From economics to comics', avatar: 'url' },
+            // { id: 4, firstName: 'Valentina', lastName: '', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Drawing with kindergardeners', avatar: 'url' },
+            // { id: 5, firstName: 'Olga', lastName: 'Hurshchankova', following: false, location: { city: 'Gomel', country: 'Belarus' }, status: 'Hiding in Stomatology', avatar: 'url' },
+            // { id: 6, firstName: 'Antanina', lastName: 'Areshachka', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Living on the clouds', avatar: 'url' },
+        ]
 }
 
 const friendsPageReducer = (state = initialState, action) => {
-    debugger
+
     switch (action.type) {
-        // case FOLLOW:
-        //     return {
-        //         ...state,
-        //         friendsData: [...state.friendsData],
-        //         usersData: state.usersData.map(u => {
-        //             if (u.id === action.userId) {
-        //                 return { ...u, following: true }
-        //             }
-        //             return u
-        //         }),
-        //     }
-        // case UNFOLLOW:
-        //     return {
-        //         ...state,
-        //         friendsData: [...state.friendsData],
-        //         usersData: state.usersData.map(u => {
-        //             if (u.id === action.userId) {
-        //                 return { ...u, following: false }
-        //             }
-        //             return u
-        //         }),
-        //     }
+
+        case FOLLOW:
+            return {
+                ...state,
+                friendsData: [...state.friendsData],
+                // usersData: [...state.usersData],
+                usersData: state.usersData
+                    .map(u => ((u.id === action.userId) ? { ...u, followed: true } : u)),
+            }
+        case UN_FOLLOW:
+            return {
+                ...state,
+                friendsData: [...state.friendsData],
+                usersData: state.usersData.map(u => {
+                    if (u.id === action.userId) {
+                        return { ...u, followed: false }
+                    }
+                    return u
+                }),
+            }
 
         case TOGGLE_FOLLOW:
             return {
@@ -53,16 +52,17 @@ const friendsPageReducer = (state = initialState, action) => {
                 friendsData: [...state.friendsData],
                 usersData: state.usersData.map(u => {
                     if (u.id === action.userId) {
-                        return { ...u, following: !u.following }
+                        return { ...u, followed: !u.followed }
                     }
                     return u
                 }),
             }
 
         case SET_USERS:
+            debugger
             return {
                 ...state,
-                usersData: [...state.usersData, action.usersData],
+                usersData: [...state.usersData, ...action.usersData],
                 // usersData.location:{ city: action.city, country: action.country}
             }
 
@@ -71,10 +71,10 @@ const friendsPageReducer = (state = initialState, action) => {
     }
 }
 
-// export const followActionCreator = (userID) => { return { type: FOLLOW, userID } }
-// export const unfollowActionCreator = (userID) => { return { type: UNFOLLOW, userID } }
-export const toggleFollowActionCreator = (userID) => { return { type: TOGGLE_FOLLOW, userID } }
-export const setUsersActionCreator = (usersData) => { return { type: SET_USERS, usersData } }
+export const followAC = (userId) => { return { type: FOLLOW, userId } }
+export const unFollowAC = (userId) => { return { type: UN_FOLLOW, userId } }
+export const toggleFollowAC = (userId) => { return { type: TOGGLE_FOLLOW, userId } }
+export const setUsersAC = (usersData) => { return { type: SET_USERS, usersData } }
 
 
 export default friendsPageReducer

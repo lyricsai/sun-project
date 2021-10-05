@@ -1,7 +1,7 @@
 import FriendsPage from './FriendsPage'
 import FriendItem from './FriendItem/FriendItem'
 import { connect } from 'react-redux'
-import { toggleFollowActionCreator, setUsersActionCreator } from '../../redux/friendsPageReducer'
+import { followAC, unFollowAC, toggleFollowAC, setUsersAC } from '../../redux/friendsPageReducer'
 
 let mapStateToProps = (state) => {
 
@@ -11,12 +11,12 @@ let mapStateToProps = (state) => {
     }
 }
 let mapDispatchToProps = (dispatch) => {
-    debugger
+
     return {
-        // follow: (userId) => { dispatch(followActionCreator(userId)) },
-        // unfollow: (userId) => { dispatch(unfollowActionCreator(userId)) },
-        toggleFollow: (userId) => { dispatch(toggleFollowActionCreator(userId)) },
-        setUsers: (usersData) => { dispatch(setUsersActionCreator(usersData)) },
+        follow: (userId) => { dispatch(followAC(userId)) },
+        unFollow: (userId) => { dispatch(unFollowAC(userId)) },
+        toggleFollow: (userId) => { dispatch(toggleFollowAC(userId)) },
+        setUsers: (usersData) => { dispatch(setUsersAC(usersData)) },
     }
 }
 

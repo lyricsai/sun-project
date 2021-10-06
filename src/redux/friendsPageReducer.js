@@ -2,6 +2,8 @@ const FOLLOW = 'FOLLOW'
 const UN_FOLLOW = 'UN_FOLLOW'
 const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW'
 const SET_USERS = 'SET_USERS'
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
+const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT'
 
 let initialState = {
     friendsData: [
@@ -19,7 +21,10 @@ let initialState = {
             // { id: 4, firstName: 'Valentina', lastName: '', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Drawing with kindergardeners', avatar: 'url' },
             // { id: 5, firstName: 'Olga', lastName: 'Hurshchankova', following: false, location: { city: 'Gomel', country: 'Belarus' }, status: 'Hiding in Stomatology', avatar: 'url' },
             // { id: 6, firstName: 'Antanina', lastName: 'Areshachka', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Living on the clouds', avatar: 'url' },
-        ]
+        ],
+    pageSize: 5,
+    totalUsersCount: 0,
+    currentPage: 1,
 }
 
 const friendsPageReducer = (state = initialState, action) => {
@@ -59,22 +64,38 @@ const friendsPageReducer = (state = initialState, action) => {
             }
 
         case SET_USERS:
-            debugger
             return {
                 ...state,
-                usersData: [...state.usersData, ...action.usersData],
+                usersData: action.usersData,
                 // usersData.location:{ city: action.city, country: action.country}
             }
+
+        case SET_CURRENT_PAGE:
+            return {
+                ...state,
+                currentPage: action.currentPage,
+            }
+
+        case SET_TOTAL_USERS_COUNT:
+            return {
+                ...state,
+                totalUsersCount: action.totalUsersCount,
+            }
+
+
 
 
         default: return state
     }
 }
 
+
 export const followAC = (userId) => { return { type: FOLLOW, userId } }
 export const unFollowAC = (userId) => { return { type: UN_FOLLOW, userId } }
 export const toggleFollowAC = (userId) => { return { type: TOGGLE_FOLLOW, userId } }
 export const setUsersAC = (usersData) => { return { type: SET_USERS, usersData } }
+export const setCurrentPageAC = (currentPage) => { return { type: SET_CURRENT_PAGE, currentPage } }
+export const setTotalUsersCountAC = (totalUsersCount) => { return { type: SET_TOTAL_USERS_COUNT, totalUsersCount } }
 
 
 export default friendsPageReducer

@@ -7,18 +7,23 @@ import logo from './../../logo.svg'
 
 const FriendsPage = (props) => {
 
-    if (props.usersData.length === 0) {
+    let getUsers = () => {
 
-        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+        if (props.usersData.length === 0) {
 
-            props.setUsers(response.data.items)
-        })
+            axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+
+                props.setUsers(response.data.items)
+            })
+        }
     }
 
     return <div className={s.friendsPage} >
+
         <NavLink to="/friends" className={s.friendsLink}>
             <h3 className={s.friendsPageTitle} >Friends</h3>
         </NavLink>
+        <button onClick={getUsers}>Get Users</button>
         <ul>{props.usersData.map(u => <li className={s.user__info} key={u.id} >
 
             <div className={s.user__toFollow}>

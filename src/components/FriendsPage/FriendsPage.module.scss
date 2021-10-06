@@ -72,3 +72,13 @@
     grid-area: location;
     text-align: end;
 }
+
+.selectedPage {
+    font-weight: 800;
+    cursor: pointer;
+    padding: 3px;
+}
+.unselectedPage {
+    cursor: pointer;
+    padding: 3px;
+}

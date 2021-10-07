@@ -5,13 +5,9 @@ import { connect } from 'react-redux'
 let mapStateToProps = (state) => {
 
     return {
-        friendsElements: state.friendsPage.friendsData.map(friend => <FriendItem avatar={friend.avatar} key={friend.id} name={friend.name} />)
+        friendsElements: state.usersPage.friendsData
+        .map(friend => <FriendItem avatar={friend.avatar} key={friend.id} name={friend.name} />)
     }
 }
-let mapDispatchToProps = (dispatch) => {
-    return {}
-}
 
-let FriendsOnlineContainer = connect(mapStateToProps, mapDispatchToProps)(FriendsOnline)
-
-export default FriendsOnlineContainer
+export default connect(mapStateToProps, {})(FriendsOnline)

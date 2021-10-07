@@ -6,7 +6,7 @@ const FriendsOnline = (props) => {
 
 
     return < div className={s.friendsPage} >
-        <NavLink to="/friends" className={s.friendsLink}>
+        <NavLink to="/users" className={s.friendsLink}>
             <h3 className={s.friendsPageTitle} >Online</h3>
         </NavLink>
         <div className={s.friends__container}>{props.friendsElements}

@@ -4,6 +4,8 @@ const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW'
 const SET_USERS = 'SET_USERS'
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT'
+const TOGGLE_IS_FETCHING ='TOGGLE_IS_FETCHING'
+const SET_USER_PROFILE ='SET_USER_PROFILE'
 
 let initialState = {
     friendsData: [
@@ -25,9 +27,11 @@ let initialState = {
     pageSize: 5,
     totalUsersCount: 0,
     currentPage: 1,
+    isFetching: false,
+    profile: {},
 }
 
-const friendsPageReducer = (state = initialState, action) => {
+const usersPageReducer = (state = initialState, action) => {
 
     switch (action.type) {
 
@@ -82,20 +86,32 @@ const friendsPageReducer = (state = initialState, action) => {
                 totalUsersCount: action.totalUsersCount,
             }
 
+        case TOGGLE_IS_FETCHING:
 
-
-
-        default: return state
+            return {
+                ...state,
+                isFetching: action.isFetching
+            }
+        case SET_USER_PROFILE:
+            
+            return {
+                ...state,
+                profile: action.profile
+            }
+            
+            
+       default: return state
     }
 }
 
+export const follow = (userId) => { return { type: FOLLOW, userId } }
+export const unFollow = (userId) => { return { type: UN_FOLLOW, userId } }
+export const toggleFollow = (userId) => { return { type: TOGGLE_FOLLOW, userId } }
+export const setUsers = (usersData) => { return { type: SET_USERS, usersData } }
+export const setCurrentPage = (currentPage) => { return { type: SET_CURRENT_PAGE, currentPage } }
+export const setTotalUsersCount = (totalUsersCount) => { return { type: SET_TOTAL_USERS_COUNT, totalUsersCount } }
+export const toggleIsFetching = (isFetching) => { return { type: TOGGLE_IS_FETCHING, isFetching } }
+export const setUserProfile = (profile) => { return { type: SET_USER_PROFILE, profile } }
 
-export const followAC = (userId) => { return { type: FOLLOW, userId } }
-export const unFollowAC = (userId) => { return { type: UN_FOLLOW, userId } }
-export const toggleFollowAC = (userId) => { return { type: TOGGLE_FOLLOW, userId } }
-export const setUsersAC = (usersData) => { return { type: SET_USERS, usersData } }
-export const setCurrentPageAC = (currentPage) => { return { type: SET_CURRENT_PAGE, currentPage } }
-export const setTotalUsersCountAC = (totalUsersCount) => { return { type: SET_TOTAL_USERS_COUNT, totalUsersCount } }
 
-
-export default friendsPageReducer
+export default usersPageReducer

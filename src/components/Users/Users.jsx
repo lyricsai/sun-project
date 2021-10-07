@@ -1,42 +1,44 @@
 import { NavLink } from 'react-router-dom'
-import s from './FriendsPage.module.scss'
-import * as axios from 'axios'
-import logo from './../../logo.svg'
+import s from './UsersPage.module.scss'
+import UserAvatar from './User/UserAvatar/UserAvatar'
+import UserContainer from './User/UserContainer'
 
 
 
-const FriendsPage = (props) => {
+let Users = (props) => {
 
-    let getUsers = () => {
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
+    let pages = []
 
-        if (props.usersData.length === 0) {
-
-            axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
-
-                props.setUsers(response.data.items)
-            })
-        }
+    for (let i = 1; i < pagesCount; i++) {
+        pages.push(i)
     }
 
     return <div className={s.friendsPage} >
 
         <NavLink to="/friends" className={s.friendsLink}>
             <h3 className={s.friendsPageTitle} >Friends</h3>
+
         </NavLink>
-        <button onClick={getUsers}>Get Users</button>
+
+        {/* users mapping */}
         <ul>{props.usersData.map(u => <li className={s.user__info} key={u.id} >
 
             <div className={s.user__toFollow}>
-                <div className={s.user__avatar_container}><img src={u.photos.small || u.avatar || logo} alt="avatar" /></div>
+                <NavLink to={'/profile/' + u.id}>
+                    <UserAvatar u={u} />
+                    <UserContainer u={u} />
+                </NavLink>
+
+                {/* button follow/unfollow */}
                 <span>
                     {u.followed
                         ? <button className={s.user__button} onClick={() => { props.unFollow(u.id) }}>Unfollow</button>
                         : <button className={s.user__button} onClick={() => { props.follow(u.id) }}>Follow</button>
                     }
-
                 </span>
             </div>
-
+            {/* user profile info */}
             <div className={s.user__description}>
                 <span className={s.user__firstName}>{u.name}</span>
                 <span className={s.user__status}>{u.status}</span>
@@ -47,9 +49,17 @@ const FriendsPage = (props) => {
 
         </li>)}</ul>
 
-        <div className={s.friends__container}>
-        </div>
+
+        {/* pagination */}
+        <ul>
+            {pages.map(p => {
+                return <li className={props.currentPage === p ? s.selectedPage : s.unselectedPage}
+                    onClick={(e) => { props.onPageChanged(p) }}>{p}</li>
+            })}
+        </ul>
+
     </div >
 }
 
-export default FriendsPage
+
+export default Users

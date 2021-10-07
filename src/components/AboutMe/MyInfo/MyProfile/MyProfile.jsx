@@ -1,6 +1,6 @@
-import './UserProfile.scss'
+import './MyProfile.scss'
 
-const UserProfile = () => {
+const MyProfile = () => {
     return (
         <div className="about__container">
             <div className="about__user">
@@ -15,4 +15,4 @@ const UserProfile = () => {
 }
 
 
-export default UserProfile
+export default MyProfile

@@ -13,7 +13,8 @@ const Nav = () => {
                 <li><NavLink to="/sunproject" className={classes.nav__item}>Sun Project</NavLink></li>
                 <li><NavLink to="/contacts" className={classes.nav__item}>Contacts</NavLink></li>
                 <li><NavLink to="/dialogs" className={classes.nav__item}>Dialogs</NavLink></li>
-                <li><NavLink to="/canvas" className={classes.nav__item}>Canvas</NavLink></li>
+                <li><NavLink to="/users" className={classes.nav__item}>Users</NavLink></li>
+                {/* <li><NavLink to="/canvas" className={classes.nav__item}>Canvas</NavLink></li> */}
             </ul>
 
         </nav >

@@ -3,13 +3,13 @@ import { combineReducers, createStore } from 'redux'
 import newsPageReducer from './newsPageReducer';
 import dialogsPageReducer from './dialogsPageReducer';
 import artworksReducer from './artworksReducer';
-import friendsPageReducer from './friendsPageReducer';
+import usersPageReducer from './usersPageReducer';
 
 let reducers = combineReducers({
     newsPage: newsPageReducer,
     dialogsPage: dialogsPageReducer,
     artworks: artworksReducer,
-    friendsPage: friendsPageReducer,
+    usersPage: usersPageReducer,
 })
 
 let store = createStore(reducers)

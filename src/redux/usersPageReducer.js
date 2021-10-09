@@ -4,8 +4,8 @@ const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW'
 const SET_USERS = 'SET_USERS'
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT'
-const TOGGLE_IS_FETCHING ='TOGGLE_IS_FETCHING'
-const SET_USER_PROFILE ='SET_USER_PROFILE'
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
+const SET_USER_PROFILE = 'SET_USER_PROFILE'
 
 let initialState = {
     friendsData: [
@@ -28,7 +28,7 @@ let initialState = {
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: false,
-    profile: {},
+    profile: null,
 }
 
 const usersPageReducer = (state = initialState, action) => {
@@ -93,14 +93,14 @@ const usersPageReducer = (state = initialState, action) => {
                 isFetching: action.isFetching
             }
         case SET_USER_PROFILE:
-            
+
             return {
                 ...state,
                 profile: action.profile
             }
-            
-            
-       default: return state
+
+
+        default: return state
     }
 }
 

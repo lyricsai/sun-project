@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import s from './UsersPage.module.scss'
 import UserAvatar from './User/UserAvatar/UserAvatar'
-import UserContainer from './User/UserContainer'
+// import UserContainer from './User/UserContainer'
 
 
 
@@ -18,16 +18,15 @@ let Users = (props) => {
 
         <NavLink to="/friends" className={s.friendsLink}>
             <h3 className={s.friendsPageTitle} >Friends</h3>
-
         </NavLink>
 
+        <div>{props.friendsElements}</div>
         {/* users mapping */}
         <ul>{props.usersData.map(u => <li className={s.user__info} key={u.id} >
 
             <div className={s.user__toFollow}>
                 <NavLink to={'/profile/' + u.id}>
                     <UserAvatar u={u} />
-                    <UserContainer u={u} />
                 </NavLink>
 
                 {/* button follow/unfollow */}

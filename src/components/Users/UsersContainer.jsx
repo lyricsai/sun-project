@@ -47,6 +47,7 @@ class UsersClass extends React.Component {
                 follow={this.props.follow}
                 unFollow={this.props.unFollow}
                 profile={this.props.profile}
+                friendsElements={this.props.friendsElements}
 
             />
         </>)

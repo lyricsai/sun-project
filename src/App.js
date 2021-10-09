@@ -15,7 +15,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 // import Canvas from './components/Canvas/Canvas';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainerClass from './components/Users/UsersContainerClass';
-import UserItem from './components/Users/UserItem/UserItem';
+import UserItemContainer from './components/Users/UserItem/UserItemContainer';
 
 
 const App = (props) => {
@@ -36,7 +36,7 @@ const App = (props) => {
             <Route path="/artschool" render={(() => <ArtSchool />)} />
             <Route path="/sunproject" render={(() => <SunProject />)} />
             <Route path="/users" render={(() => <UsersContainerClass />)} />
-            <Route path="/profile" render={(() => <UserItem />)} />
+            <Route path="/profile" render={(() => <UserItemContainer />)} />
             <Route path="/contacts" component={Contacts} />
             {/* <Route path="/canvas" render={(() => <Canvas />)} /> */}
             <Route path="/dialogs" render={(() => <DialogsContainer />)} />

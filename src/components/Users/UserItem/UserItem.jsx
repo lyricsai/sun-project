@@ -1,20 +1,24 @@
+import Preloader from '../../common/Preloader/Preloader'
+import UserContainer from '../User/UserContainer'
 import styles from './UserItem.module.scss'
+
 
 const UserItem = (props) => {
 
+    debugger
+
+    if (!props.profile) {
+        return <span><Preloader /></span>
+    }
+
     return (
         < div className={styles.friendsItem} >
-            {/* <div className={styles.friendsAvatarContainer} >
-                <img src={props.avatar} alt="avatar" className={styles.friendAvatar} title={props.name} />
-            </div>
-            <button type="button" value="Send"
-                className={styles.newMessage__button}
-                onClick={props.followUser}>Follow</button> */}
-            {/* <div className={styles.friend__name}>{props.name}</div> */}
 
 
+            WTF
 
 
+            {/* <UserContainer u={props.u} /> */}
 
 
             {/* <ul>{props.usersData.map(u => <li className={s.user__info} key={u.id} >
@@ -25,7 +29,7 @@ const UserItem = (props) => {
                         <UserContainer u={u} />
                     </NavLink>
 
-           ////     button follow/unfollow 
+           //     button follow/unfollow 
 
 
                     <span>
@@ -37,7 +41,7 @@ const UserItem = (props) => {
                 </div>
 
 
-          ////user profile info 
+          //user profile info 
 
 
                 <div className={s.user__description}>
@@ -49,11 +53,6 @@ const UserItem = (props) => {
                 </div>
 
             </li>)}</ul> */}
-
-
-
-
-
 
 
 

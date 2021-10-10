@@ -1,6 +1,5 @@
 const FOLLOW = 'FOLLOW'
 const UN_FOLLOW = 'UN_FOLLOW'
-const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW'
 const SET_USERS = 'SET_USERS'
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT'
@@ -9,7 +8,7 @@ const SET_USER_PROFILE = 'SET_USER_PROFILE'
 
 let initialState = {
     friendsData: [
-        { avatar: 'https://www.teahub.io/photos/full/76-768446_nice-pic-hd-download.jpg', id: 2, name: "Jannet", },
+        { avatar: 'https://www.teahub.io/photos/full/7-78322_1000-gambar-kartun-wanita-muslimah-cantik-dan-lucu.jpg', id: 2, name: "Jannet", },
         { avatar: 'https://thumbs.dreamstime.com/b/baltic-see-very-nice-pic-klaip%C4%97da-176842928.jpg', id: 3, name: "Inna" },
         { avatar: 'https://images.pexels.com/photos/1486844/pexels-photo-1486844.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', id: 4, name: "Valentina" },
         { avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP60_0QRknzoqSRgcBm7kYCv1xdOOrkZxDYQ&usqp=CAU', id: 5, name: "Olga" },
@@ -17,12 +16,12 @@ let initialState = {
     ],
     usersData:
         [
-            // { id: 1, firstName: 'Anastasiya', lastName: 'Litvinenka', following: false, location: { city: 'Gomel', country: 'Belarus' }, status: 'Studying React for Front-End Development', avatar: 'url' },
-            // { id: 2, firstName: 'Jannet', lastName: 'Sluzhenko', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Drawing dramatic stories', avatar: 'url' },
-            // { id: 3, firstName: 'Inna', lastName: '', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'From economics to comics', avatar: 'url' },
-            // { id: 4, firstName: 'Valentina', lastName: '', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Drawing with kindergardeners', avatar: 'url' },
-            // { id: 5, firstName: 'Olga', lastName: 'Hurshchankova', following: false, location: { city: 'Gomel', country: 'Belarus' }, status: 'Hiding in Stomatology', avatar: 'url' },
-            // { id: 6, firstName: 'Antanina', lastName: 'Areshachka', following: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Living on the clouds', avatar: 'url' },
+            // { id: 1, firstName: 'Anastasiya', lastName: 'Litvinenka', followed: false, location: { city: 'Gomel', country: 'Belarus' }, status: 'Studying React for Front-End Development', avatar: 'url' },
+            // { id: 2, firstName: 'Jannet', lastName: 'Sluzhenko', followed: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Drawing dramatic stories', avatar: 'url' },
+            // { id: 3, firstName: 'Inna', lastName: '', followed: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'From economics to comics', avatar: 'url' },
+            // { id: 4, firstName: 'Valentina', lastName: '', followed: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Drawing with kindergardeners', avatar: 'url' },
+            // { id: 5, firstName: 'Olga', lastName: 'Hurshchankova', followed: false, location: { city: 'Gomel', country: 'Belarus' }, status: 'Hiding in Stomatology', avatar: 'url' },
+            // { id: 6, firstName: 'Antanina', lastName: 'Areshachka', followed: true, location: { city: 'Gomel', country: 'Belarus' }, status: 'Living on the clouds', avatar: 'url' },
         ],
     pageSize: 5,
     totalUsersCount: 0,
@@ -43,28 +42,18 @@ const usersPageReducer = (state = initialState, action) => {
                 usersData: state.usersData
                     .map(u => ((u.id === action.userId) ? { ...u, followed: true } : u)),
             }
+
         case UN_FOLLOW:
             return {
                 ...state,
                 friendsData: [...state.friendsData],
-                usersData: state.usersData.map(u => {
-                    if (u.id === action.userId) {
-                        return { ...u, followed: false }
-                    }
-                    return u
-                }),
-            }
-
-        case TOGGLE_FOLLOW:
-            return {
-                ...state,
-                friendsData: [...state.friendsData],
-                usersData: state.usersData.map(u => {
-                    if (u.id === action.userId) {
-                        return { ...u, followed: !u.followed }
-                    }
-                    return u
-                }),
+                usersData: state.usersData
+                    .map(u => {
+                        if (u.id === action.userId) {
+                            return { ...u, followed: false }
+                        }
+                        return u
+                    }),
             }
 
         case SET_USERS:
@@ -99,14 +88,12 @@ const usersPageReducer = (state = initialState, action) => {
                 profile: action.profile
             }
 
-
         default: return state
     }
 }
 
 export const follow = (userId) => { return { type: FOLLOW, userId } }
 export const unFollow = (userId) => { return { type: UN_FOLLOW, userId } }
-export const toggleFollow = (userId) => { return { type: TOGGLE_FOLLOW, userId } }
 export const setUsers = (usersData) => { return { type: SET_USERS, usersData } }
 export const setCurrentPage = (currentPage) => { return { type: SET_CURRENT_PAGE, currentPage } }
 export const setTotalUsersCount = (totalUsersCount) => { return { type: SET_TOTAL_USERS_COUNT, totalUsersCount } }

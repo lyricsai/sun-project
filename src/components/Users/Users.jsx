@@ -1,64 +1,48 @@
-import { NavLink } from 'react-router-dom'
-import s from './UsersPage.module.scss'
-import UserAvatar from './User/UserAvatar/UserAvatar'
-// import UserContainer from './User/UserContainer'
+import s from './Users.module.scss'
+import * as axios from 'axios'
+import userAvatar from '../../images/useravatar.png'
 
 
+const Users = (props) => {
 
-let Users = (props) => {
 
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
-    let pages = []
+    if (props.usersData.length === 0) {
+        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+            props.setUsers(response.data.items)
+        })
 
-    for (let i = 1; i < pagesCount; i++) {
-        pages.push(i)
+
     }
 
-    return <div className={s.friendsPage} >
+    return (
+        <div className={s.users__container} >
 
-        <NavLink to="/friends" className={s.friendsLink}>
-            <h3 className={s.friendsPageTitle} >Friends</h3>
-        </NavLink>
+            {props.usersData.map(u =>
+                <div className={s.users__user_container} key={u.id}>
 
-        <div>{props.friendsElements}</div>
-        {/* users mapping */}
-        <ul>{props.usersData.map(u => <li className={s.user__info} key={u.id} >
+                    <div className={s.users__avatar_follow}>
+                        <div className={s.users__avatar}>
+                            <img src={u.avatar || u.photos.large || u.photos.small || userAvatar} alt="avatar" />
+                        </div>
+                        <div className={s.users__follow}>
+                            {(u.followed)
+                                ? <button onClick={() => { props.unFollow(u.id) }}>Unfollow</button>
+                                : <button onClick={() => { props.follow(u.id) }}>Follow</button>
+                            }
+                        </div>
+                    </div>
 
-            <div className={s.user__toFollow}>
-                <NavLink to={'/profile/' + u.id}>
-                    <UserAvatar u={u} />
-                </NavLink>
+                    <div className={s.users__description}>
+                        <span className={s.users__name}>{u.name}</span>
+                        <span className={s.users__location}> {/*{u.location.city},<br />{u.location.country} */}location</span>
+                        <span className={s.users__status}>{u.status}</span>
+                    </div>
 
-                {/* button follow/unfollow */}
-                <span>
-                    {u.followed
-                        ? <button className={s.user__button} onClick={() => { props.unFollow(u.id) }}>Unfollow</button>
-                        : <button className={s.user__button} onClick={() => { props.follow(u.id) }}>Follow</button>
-                    }
-                </span>
-            </div>
-            {/* user profile info */}
-            <div className={s.user__description}>
-                <span className={s.user__firstName}>{u.name}</span>
-                <span className={s.user__status}>{u.status}</span>
-                <span className={s.user__location}>
-                    {"u.location.city + ',' + u.location.country"}
-                </span>
-            </div>
+                </div>
+            )}
 
-        </li>)}</ul>
-
-
-        {/* pagination */}
-        <ul>
-            {pages.map(p => {
-                return <li className={props.currentPage === p ? s.selectedPage : s.unselectedPage}
-                    onClick={(e) => { props.onPageChanged(p) }}>{p}</li>
-            })}
-        </ul>
-
-    </div >
+            <button>Show More</button>
+        </div>
+    )
 }
-
-
 export default Users

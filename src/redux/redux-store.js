@@ -5,6 +5,7 @@ import dialogsPageReducer from './dialogsPageReducer';
 import artworksReducer from './artworksReducer';
 import usersPageReducer from './usersPageReducer';
 import profilePageReducer from './profilePageReducer';
+import authReducer from './authReducer';
 
 let reducers = combineReducers({
     newsPage: newsPageReducer,
@@ -12,6 +13,7 @@ let reducers = combineReducers({
     artworks: artworksReducer,
     usersPage: usersPageReducer,
     profilePage: profilePageReducer,
+    auth: authReducer,
 })
 
 let store = createStore(reducers)

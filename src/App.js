@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Route, } from "react-router-dom";
 import { Provider } from 'react-redux'
 
-import Header from './components/Header/Header'
+import HeaderContainer from './components/Header/HeaderContainer'
 import AboutMe from './components/AboutMe/AboutMe'
 import News from './components/News/News'
 import Footer from './components/Footer/Footer'
@@ -26,7 +26,7 @@ const App = (props) => {
 
         <div className="app__wrapper">
 
-          <Header />
+          <HeaderContainer />
           <Sidebar />
 
           <div className="app__wrapper_content">
@@ -51,9 +51,6 @@ const App = (props) => {
     </BrowserRouter >
   );
 }
-
-
-
 
 
 

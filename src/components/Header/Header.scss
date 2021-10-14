@@ -2,6 +2,7 @@
     grid-area: header;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     box-shadow: 1px 10px 10px rgba(150, 150, 150, 0.2);
     border-radius: 2rem;
 }
@@ -11,4 +12,8 @@
     font-weight: 700;
     letter-spacing: 2px;
     padding: 20px 20px 20px 3rem;
+}
+
+.header__login_block {
+    margin-right: 40px;
 }

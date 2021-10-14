@@ -1,5 +1,6 @@
 import s from './Users.module.scss'
 import userAvatar from '../../images/useravatar.png'
+import { NavLink } from 'react-router-dom'
 
 const Users = (props) => {
 
@@ -20,7 +21,9 @@ const Users = (props) => {
 
                     <div className={s.users__avatar_follow}>
                         <div className={s.users__avatar}>
-                            <img src={u.avatar || u.photos.large || u.photos.small || userAvatar} alt="avatar" />
+                            <NavLink to={'/profile/' + u.id}>
+                                <img src={u.avatar || u.photos.large || u.photos.small || userAvatar} alt="avatar" />
+                            </NavLink>
                         </div>
                         <div className={s.users__follow}>
                             {(u.followed)
@@ -37,17 +40,18 @@ const Users = (props) => {
                     </div>
 
                 </div>
-            )}
+            )
+            }
 
             <button>Show More</button>
 
             <ul className={s.users__userPages}>pages
-            {pages.map(p => {
-                return <li className={props.currentPage === p && s.users__page_selected}
-                    onClick={(e) => { props.onPageChange(p) }}>{p}</li>
-            })}
+                {pages.map(p => {
+                    return <li className={props.currentPage === p && s.users__page_selected}
+                        onClick={(e) => { props.onPageChange(p) }}>{p}</li>
+                })}
             </ul>
-        </div>
+        </div >
     )
 }
 

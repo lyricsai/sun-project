@@ -15,6 +15,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 // import Canvas from './components/Canvas/Canvas';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
 
 
 
@@ -36,7 +37,7 @@ const App = (props) => {
             <Route path="/artschool" render={(() => <ArtSchool />)} />
             <Route path="/sunproject" render={(() => <SunProject />)} />
             <Route path="/users" render={(() => <UsersContainer />)} />
-            {/* <Route path="/profile" render={(() => <UserItem />)} /> */}
+            <Route path="/profile/:userId?" render={(() => <ProfileContainer />)} />
             <Route path="/contacts" component={Contacts} />
             {/* <Route path="/canvas" render={(() => <Canvas />)} /> */}
             <Route path="/dialogs" render={(() => <DialogsContainer />)} />

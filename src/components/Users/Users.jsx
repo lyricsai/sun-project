@@ -1,6 +1,7 @@
 import s from './Users.module.scss'
 import userAvatar from '../../images/useravatar.png'
 import { NavLink } from 'react-router-dom'
+import { usersAPI } from '../api/api'
 
 const Users = (props) => {
 
@@ -11,6 +12,7 @@ const Users = (props) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i)
     }
+    debugger
 
     return (
 
@@ -27,8 +29,27 @@ const Users = (props) => {
                         </div>
                         <div className={s.users__follow}>
                             {(u.followed)
-                                ? <button onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
-                                : <button onClick={() => { props.follow(u.id) }}>Follow</button>
+                                ? <button disabled={props.followingProgress} onClick={() => {
+                                    props.toggleIsFollowing(true)
+                                    usersAPI.deleteFollow(u.id)
+                                        .then(response => {
+                                            if (response.resultCode == 0) { props.unfollow(u.id) }
+
+                                            props.toggleIsFollowing(false)
+                                        })
+
+                                }}>Unfollow</button>
+
+                                : <button disabled={props.followingProgress} onClick={() => {
+                                    props.toggleIsFollowing(true)
+                                    usersAPI.addFollow(u.id)
+                                        .then(response => {
+                                            if (response.resultCode == 0) { props.follow(u.id) }
+
+                                            props.toggleIsFollowing(false)
+                                        })
+                                }}>Follow</button>
+
                             }
                         </div>
                     </div>
@@ -47,9 +68,9 @@ const Users = (props) => {
 
             <ul className={s.users__userPages}>pages
                 {pages.map(p => {
-                    return <li className={props.currentPage === p && s.users__page_selected}
-                        onClick={(e) => { props.onPageChange(p) }}>{p}</li>
-                })}
+                return <li className={props.currentPage === p && s.users__page_selected}
+                    onClick={(e) => { props.onPageChange(p) }}>{p}</li>
+            })}
             </ul>
         </div >
     )

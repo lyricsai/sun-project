@@ -13,7 +13,7 @@ const ProfileInfo = (props) => {
     let ContactsElements = Object.entries(props.profile.contacts).map(([key, value], c) => {
         if ([value] != '') return (
             <li className={s.contacts__item}>
-                <a href={`https://${value}`} target='_blank' className={s.contacts__link}>
+                <a href={`https://${value}`} target='_blank' rel="noreferrer" className={s.contacts__link}>
                     {`${key}`}
                 </a>
             </li>

@@ -1,5 +1,5 @@
 import "./MainPicture.scss"
-import moon from './../../../images/moon.jpg';
+import moon from '../../../assets/static/images/moon.jpg'
 
 const MainPicture = () => {
     return (

@@ -2,7 +2,7 @@
   "name": "sun-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "lhttps://lyricsai.github.io/sun-project/",
+  "homepage": "https://lyricsai.github.io/sun-project/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -14,7 +14,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
     "redux": "^4.1.1",
     "web-vitals": "^1.1.2"
@@ -46,9 +46,9 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3",
-    "vite": "^2.5.0",
     "follow-redirects": ">=1.14.8",
-    "immer": ">=9.0.6"
+    "gh-pages": "^3.2.3",
+    "immer": ">=9.0.6",
+    "vite": "^2.5.0"
   }
 }

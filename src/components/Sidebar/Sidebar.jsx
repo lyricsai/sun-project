@@ -2,15 +2,10 @@ import Burger from './Nav/Burger/Burger'
 import Nav from './Nav/Nav'
 import './Sidebar.scss'
 
-
-
-
 const Sidebar = ({ menuOpen, toggleMenu }) => {
 
     let display
     menuOpen ? display = '_active' : display = ''
-
-    console.log(menuOpen)
 
     return (
 

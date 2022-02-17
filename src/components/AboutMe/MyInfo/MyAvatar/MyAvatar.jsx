@@ -1,5 +1,5 @@
 import './MyAvatar.scss'
-import me from './../../../../images/me.jpg'
+import me from '../../../../assets/static/images/me.jpg'
 
 const MyAvatar = () => {
     return (

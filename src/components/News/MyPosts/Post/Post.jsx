@@ -1,5 +1,5 @@
 import './Post.scss'
-import me from '../../../../images/me.jpg'
+import me from '../../../../assets/static/images/me.jpg'
 import React from 'react'
 
 const Post = ({ message, time }) => {

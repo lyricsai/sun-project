@@ -10,17 +10,13 @@
     "axios": "^0.22.0",
     "brew": "^0.0.8",
     "classnames": "^2.3.1",
-    "jquery": "^3.6.0",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "react-slick": "^0.28.1",
     "redux": "^4.1.1",
-    "slick-carousel": "^1.8.1",
-    "swiper": "^6.8.4",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -51,6 +47,8 @@
   },
   "devDependencies": {
     "gh-pages": "^3.2.3",
-    "vite": "^2.5.0"
+    "vite": "^2.5.0",
+    "follow-redirects": ">=1.14.8",
+    "immer": ">=9.0.6"
   }
 }

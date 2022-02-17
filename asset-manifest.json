@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/lyricsai.github.io/my-gallery/static/css/main.315d0679.chunk.css",
-    "main.js": "/lyricsai.github.io/my-gallery/static/js/main.bef20a01.chunk.js",
-    "main.js.map": "/lyricsai.github.io/my-gallery/static/js/main.bef20a01.chunk.js.map",
+    "main.js": "/lyricsai.github.io/my-gallery/static/js/main.f246585c.chunk.js",
+    "main.js.map": "/lyricsai.github.io/my-gallery/static/js/main.f246585c.chunk.js.map",
     "runtime-main.js": "/lyricsai.github.io/my-gallery/static/js/runtime-main.4072f702.js",
     "runtime-main.js.map": "/lyricsai.github.io/my-gallery/static/js/runtime-main.4072f702.js.map",
     "static/js/2.767ee72e.chunk.js": "/lyricsai.github.io/my-gallery/static/js/2.767ee72e.chunk.js",
@@ -46,6 +46,6 @@
     "static/js/runtime-main.4072f702.js",
     "static/js/2.767ee72e.chunk.js",
     "static/css/main.315d0679.chunk.css",
-    "static/js/main.bef20a01.chunk.js"
+    "static/js/main.f246585c.chunk.js"
   ]
 }

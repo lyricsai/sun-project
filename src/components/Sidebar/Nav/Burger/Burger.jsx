@@ -7,7 +7,7 @@ const Burger = ({ isOpen, toggleMenu }) => {
     isOpen ? toggle = '_active' : toggle = null
 
     return (
-        <div className='menu_container ' onClick={toggleMenu}>
+        <div className='menu_container ' >
             <button className={`${toggle} icon_menu`} id='icon_menu' >
                 <span></span>
                 <span></span>

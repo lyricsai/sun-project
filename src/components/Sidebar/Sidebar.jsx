@@ -10,7 +10,7 @@ const Sidebar = ({ menuOpen, toggleMenu }) => {
 
     return (
 
-        <div>
+        <div onClick={toggleMenu}>
             <Burger toggleMenu={toggleMenu} isOpen={menuOpen} />
             <aside className={`sidebar ${display}`}  >
                 <Nav />

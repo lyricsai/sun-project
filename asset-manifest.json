@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sun-project/static/css/main.9f08b0f1.chunk.css",
-    "main.js": "/sun-project/static/js/main.02dcee73.chunk.js",
-    "main.js.map": "/sun-project/static/js/main.02dcee73.chunk.js.map",
+    "main.js": "/sun-project/static/js/main.6efed314.chunk.js",
+    "main.js.map": "/sun-project/static/js/main.6efed314.chunk.js.map",
     "runtime-main.js": "/sun-project/static/js/runtime-main.dabb37f6.js",
     "runtime-main.js.map": "/sun-project/static/js/runtime-main.dabb37f6.js.map",
     "static/js/2.c08b3caf.chunk.js": "/sun-project/static/js/2.c08b3caf.chunk.js",
@@ -54,6 +54,6 @@
     "static/js/runtime-main.dabb37f6.js",
     "static/js/2.c08b3caf.chunk.js",
     "static/css/main.9f08b0f1.chunk.css",
-    "static/js/main.02dcee73.chunk.js"
+    "static/js/main.6efed314.chunk.js"
   ]
 }

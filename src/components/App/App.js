@@ -1,6 +1,7 @@
 import './App.css';
 import { HashRouter } from "react-router-dom";
 import { Provider } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import HeaderContainer from '../Header/HeaderContainer'
 
@@ -41,6 +42,10 @@ const App = ({ store }) => {
       </Provider>
     </HashRouter >
   )
+}
+
+App.propTypes = {
+  store: PropTypes.object
 }
 
 export default App

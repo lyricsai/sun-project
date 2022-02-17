@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import ModalSlide from "../../ModalSlide/ModalSlide";
 import useModal from "../../../useModal/UseModal"
 import { Fragment } from "react"
+import PropTypes from 'prop-types'
 
 const Slide = ({ activeSlide, prevSlide, slide, index, parts }) => {
 
@@ -31,5 +32,15 @@ const Slide = ({ activeSlide, prevSlide, slide, index, parts }) => {
         </Fragment>
     )
 }
+
+Slide.propTypes = {
+    activeSlide: PropTypes.number,
+    prevSlide: PropTypes.number,
+    slide: PropTypes.object,
+    index: PropTypes.number,
+    parts: PropTypes.number
+
+}
+
 
 export default Slide

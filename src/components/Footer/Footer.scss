@@ -5,4 +5,13 @@
     justify-content: space-around;
     box-shadow: 1px -10px 10px rgba(150, 150, 150, 0.2);
     border-radius: 2rem;
+    flex-wrap: wrap;
+}
+@media (max-width: 430px) {
+    .footer {
+        flex-direction: column;
+    }
+}
+.footer p {
+    width: initial;
 }

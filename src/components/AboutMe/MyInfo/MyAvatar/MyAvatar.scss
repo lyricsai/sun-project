@@ -1,3 +1,14 @@
-.about__image-container-01 {
+.about__me_container {
     border-radius: 1em;
+    width: 150px;
+    height: 200px;
+    position: relative;
+    // padding: 20px;
+    margin: 20px;
+}
+.about__me_container img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
 }

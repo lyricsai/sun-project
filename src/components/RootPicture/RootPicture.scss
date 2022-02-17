@@ -5,12 +5,17 @@
 .appFrontContainer__image img {
     width: 200%;
     object-fit: cover;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // width: 110%;
 }
 .frontImageContainer {
     text-align: center;
     padding-top: 20px;
+    height: 100%;
+    background: url("./../../images/moon.jpg") 50% 50% / auto auto no-repeat;
+
+    & h2 {
+        color: white;
+        text-shadow: 0px 0px 10px grey;
+        background-color: rgba(128, 128, 128, 0.486);
+        width: 50%;
+    }
 }

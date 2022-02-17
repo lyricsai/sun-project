@@ -14,7 +14,6 @@ const NewPost = (props) => {
 
     return (
         <div className="newPost">
-            {/* <h4>New Post</h4> */}
             <textarea name=""
                 onChange={onPostChange}
                 value={props.newPostText}

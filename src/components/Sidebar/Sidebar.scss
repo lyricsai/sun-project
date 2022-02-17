@@ -1,8 +1,29 @@
 .sidebar {
     grid-area: sidebar;
-    box-shadow: 1px 10px 10px rgba(150, 150, 150, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 2em;
+}
+@media (max-width: 900px) {
+    .sidebar {
+        grid-area: initial;
+        display: none;
+    }
+}
+.sidebar_active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 50px;
+    display: flex;
+    background: #fff;
+    z-index: 101;
+}
+@media (max-width: 900px) {
+    .sidebar_active li {
+        font-size: 30px;
+    }
 }

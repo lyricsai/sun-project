@@ -3,9 +3,9 @@ const UPDATE_POST_TEXT = 'UPDATE_POST_TEXT'
 
 let initialState = {
     postsData: [
-        { id: 1, message: "Long Ago", likesCounter: 11 },
-        { id: 2, message: "Before", likesCounter: 3 },
-        { id: 3, message: "Last one", likesCounter: 2 },
+        { id: 1, message: "I am on my way to become an artist", time: "a year ago" },
+        { id: 2, message: "My credo is bringing a joy into the world through my art", time: "6 months ago" },
+        { id: 3, message: "Being in hiatus with my art means for me consolidating emotions to explode them into new stage of creativity", time: "2 weeks ago" },
     ],
     newPostText: 'BlackPink in your area!..',
 }
@@ -28,7 +28,7 @@ const newsPageReducer = (state = initialState, action) => {
                     {
                         id: postsNumber + 1,
                         message: stateCopy.newPostText,
-                        likesCounter: 0,
+                        time: stateCopy.time,
                     }],
                     newPostText: '',
                 }

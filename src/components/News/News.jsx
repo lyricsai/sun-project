@@ -5,7 +5,7 @@ const News = () => {
     return (
         <div>
             <section className="news">
-                <h2 className="about__artist">My news</h2>
+                <h2 className="about__artist">What to tell? um...</h2>
                 <MyPostsContainer />
             </section>
         </div>

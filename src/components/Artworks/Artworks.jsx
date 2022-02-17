@@ -6,9 +6,7 @@ const Artworks = () => {
 
         <section className="myArtworks">
             <h2 className='myArtworksTitle' >My Art Gallery</h2>
-
             <GallerySliderContainer />
-
         </section>
 
     )

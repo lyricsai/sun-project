@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "my-gallery",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.22.0",
     "brew": "^0.0.8",
+    "classnames": "^2.3.1",
     "jquery": "^3.6.0",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",

@@ -1,13 +1,11 @@
 import './MyPosts.scss';
-import NewPostContainer from './NewPost/NewPostContainer';
 
-const MyPosts = (props) => {
+const MyPosts = ({ postsElements }) => {
 
     return (
         <section className="main__posts posts">
-            <NewPostContainer />
             <div className="posts__history">
-                {props.postsElements}
+                {postsElements}
             </div>
         </section>)
 }

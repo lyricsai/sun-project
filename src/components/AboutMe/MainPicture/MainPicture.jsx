@@ -1,10 +1,10 @@
 import "./MainPicture.scss"
-import monkey from './../../../images/monkey.jpg';
+import moon from './../../../images/moon.jpg';
 
 const MainPicture = () => {
     return (
         <div className="main__image_container">
-            <img src={monkey} alt="monkey" className="main__image" />
+            <img src={moon} alt="me" className="main__image" />
         </div>
     )
 }

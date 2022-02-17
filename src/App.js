@@ -7,43 +7,52 @@ import AboutMe from './components/AboutMe/AboutMe'
 import News from './components/News/News'
 import Footer from './components/Footer/Footer'
 import Artworks from './components/Artworks/Artworks'
-import ArtSchool from './components/ArtSchool/ArtSchool'
 import Contacts from './components/Contacts/Contacts'
-import SunProject from './components/SunProject/SunProject'
 import RootPicture from './components/RootPicture/RootPicture';
 import Sidebar from './components/Sidebar/Sidebar';
-// import Canvas from './components/Canvas/Canvas';
-import DialogsContainer from './components/Dialogs/DialogsContainer';
-import UsersContainer from './components/Users/UsersContainer';
-import ProfileContainer from './components/Profile/ProfileContainer';
+import { useState } from 'react'
 
 
+const App = ({ store }) => {
 
-const App = (props) => {
+
+  const [menuOpen, setMenuOpen] = useState(false)
+  const toggleMenu = () => { setMenuOpen(!menuOpen) }
+
+  let styles
+
+  menuOpen
+    ? styles = { gridTemplateAreas: "sidebar" }
+    : styles = {
+      gridTemplateAreas: `  "header"  "main"  "footer"`
+    }
+
+
+  console.log(menuOpen)
   return (
     <BrowserRouter>
-      <Provider store={props.store}>
+      <Provider store={store}>
 
-        <div className="app__wrapper">
+        <div className="app__wrapper" style={styles}>
 
           <HeaderContainer />
-          <Sidebar />
+          <Sidebar toggleMenu={toggleMenu} menuOpen={menuOpen} />
 
           <div className="app__wrapper_content">
             <Route exact path="/" component={RootPicture} />
             <Route path="/aboutme" render={(() => <AboutMe />)} />
             <Route path="/news" render={(() => <News />)} />
             <Route path="/artworks" render={(() => <Artworks />)} />
-            <Route path="/artschool" render={(() => <ArtSchool />)} />
-            <Route path="/sunproject" render={(() => <SunProject />)} />
-            <Route path="/users" render={(() => <UsersContainer />)} />
-            <Route path="/profile/:userId?" render={(() => <ProfileContainer />)} />
             <Route path="/contacts" component={Contacts} />
-            {/* <Route path="/canvas" render={(() => <Canvas />)} /> */}
-            <Route path="/dialogs" render={(() => <DialogsContainer />)} />
           </div>
-
           <Footer />
+
+
+          <style jsx="true">
+            {`
+
+`}
+          </style>
 
         </div>
 

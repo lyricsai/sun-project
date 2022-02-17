@@ -1,3 +1,13 @@
+.sidebar._active {
+    position: initial;
+    background: initial;
+    z-index: initial;
+    padding: initial;
+    left: initial;
+    top: initial;
+    bottom: initial;
+    right: initial;
+}
 .sidebar {
     grid-area: sidebar;
     display: flex;
@@ -13,7 +23,7 @@
 }
 
 @media (max-width: 900px) {
-    .sidebar_active {
+    .sidebar._active {
         position: fixed;
         top: 0;
         left: 0;

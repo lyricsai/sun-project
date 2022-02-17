@@ -11,7 +11,7 @@ const Sidebar = ({ menuOpen, toggleMenu }) => {
 
         <div>
             <Burger toggleMenu={toggleMenu} isOpen={menuOpen} />
-            <aside className={`sidebar${display}`} onClick={toggleMenu} >
+            <aside className={`sidebar ${display}`} onClick={toggleMenu} >
                 <Nav />
             </aside>
         </div>
